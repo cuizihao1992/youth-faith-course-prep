@@ -8,7 +8,9 @@
 
 来源链接：https://cuizihao.substack.com/p/493?utm_source=share&utm_medium=android&r=8ny3va&triedRedirect=true
 
-保存文件：cuizihao_493_freedom_spiritual_warfare_original.html
+Markdown 文件：cuizihao_493_freedom_spiritual_warfare.md
+
+原始网页备份：cuizihao_493_freedom_spiritual_warfare_original.html
 
 保存时间：2026-07-02
 
