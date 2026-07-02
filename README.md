@@ -12,6 +12,7 @@
 
 最重要的是：
 
+- `00_speaker_quick_start.md`：讲课前快速进入状态。
 - `01_content_outline.md`：内容提纲，回答“讲什么”。
 - `02_session_script.md`：课程脚本，回答“怎么讲”。
 - `03_biblical_basis_for_answers.md`：课堂、考试、信仰回应的圣经依据。
@@ -20,6 +21,7 @@
 - `06_middle_flow.md`：中间如何展开。
 - `07_core_logic.md`：整堂课的核心逻辑。
 - `08_target_context_leaving_home.md`：目标对象修正。
+- `13_guiding_questions.md`：少说教、多引导的问题库。
 
 ### 02_high_school_life
 
