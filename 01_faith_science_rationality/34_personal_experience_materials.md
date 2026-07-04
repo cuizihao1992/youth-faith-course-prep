@@ -6,6 +6,8 @@
 
 补充说明：大学、学习、游戏、保研、高考相关的详细经历，已单独整理在 `35_university_learning_time_and_grace_experiences.md`。
 
+AI 与创造、AI 工具演示、AI 对专业选择的影响，已单独整理在 `38_ai_creation_tool_and_demo_assessment.md`。
+
 比较稳的顺序是：
 
 **我的经历是入口，圣经是根基，给孩子一条将来能走的路。**
