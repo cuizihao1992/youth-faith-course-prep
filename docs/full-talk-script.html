@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>90 分钟完整讲稿｜离开父母以后，怎样在神里面站住</title>
+  <style>
+    :root {
+      --ink: #171717;
+      --muted: #606872;
+      --paper: #faf8f2;
+      --panel: #ffffff;
+      --line: #d9ded8;
+      --green: #1f6b4a;
+      --blue: #315f7d;
+      --gold: #9a6a1d;
+      --red: #9a3f36;
+      --green-soft: #e6f2ea;
+      --blue-soft: #e8f0f5;
+      --gold-soft: #f7efd9;
+      --red-soft: #f8e8e4;
+      --shadow: 0 18px 45px rgba(18, 25, 31, .10);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #e7ece8;
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+      line-height: 1.66;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(1240px, calc(100% - 40px));
+      margin: 24px auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      padding: 36px 42px 30px;
+      background:
+        linear-gradient(120deg, rgba(31, 107, 74, .09), rgba(49, 95, 125, .08)),
+        var(--panel);
+      border-bottom: 4px solid var(--ink);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 940px;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 900px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .top-actions a {
+      display: inline-block;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      text-decoration: none;
+      font-weight: 800;
+      border-radius: 6px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+      padding: 22px 18px;
+      background: #f4f6f1;
+      border-right: 1px solid var(--line);
+    }
+
+    nav h2 {
+      margin: 0 0 14px;
+      font-size: 16px;
+    }
+
+    nav a {
+      display: block;
+      margin: 0 0 8px;
+      padding: 9px 10px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      border-radius: 6px;
+    }
+
+    nav a:hover {
+      border-color: var(--green);
+      background: var(--green-soft);
+    }
+
+    main {
+      padding: 28px 36px 48px;
+    }
+
+    section {
+      margin: 0 0 34px;
+      scroll-margin-top: 22px;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .time {
+      min-width: 86px;
+      padding: 8px 10px;
+      color: #fff;
+      background: var(--ink);
+      border-radius: 6px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 25px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 18px;
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-size: 17px;
+    }
+
+    ul, ol {
+      margin: 8px 0 14px 24px;
+      padding: 0;
+      font-size: 17px;
+    }
+
+    li { margin: 5px 0; }
+
+    .script {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .cue,
+    .scripture,
+    .question,
+    .warning,
+    .summary {
+      margin: 14px 0;
+      padding: 13px 15px;
+      border-left: 6px solid var(--blue);
+      border-radius: 6px;
+      background: var(--blue-soft);
+      font-size: 16px;
+    }
+
+    .question {
+      border-left-color: var(--green);
+      background: var(--green-soft);
+      font-weight: 800;
+    }
+
+    .scripture {
+      border-left-color: var(--gold);
+      background: var(--gold-soft);
+    }
+
+    .warning {
+      border-left-color: var(--red);
+      background: var(--red-soft);
+    }
+
+    .summary {
+      border-left-color: var(--green);
+      background: var(--green-soft);
+      font-weight: 900;
+    }
+
+    .cue strong,
+    .scripture strong,
+    .question strong,
+    .warning strong,
+    .summary strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .map {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .map div {
+      padding: 14px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-weight: 800;
+    }
+
+    footer {
+      padding: 22px 42px 34px;
+      background: var(--panel);
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page {
+        width: 100%;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+      }
+      nav, .top-actions { display: none; }
+      .layout { display: block; }
+      section { break-inside: avoid; }
+    }
+
+    @media (max-width: 920px) {
+      .page {
+        width: 100%;
+        margin: 0;
+        border: none;
+      }
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+      nav a {
+        display: inline-block;
+        margin-right: 6px;
+      }
+      header, main, footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .map {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <p class="eyebrow">完整讲稿 · 90 分钟 · 可照着讲</p>
+      <h1>离开父母以后，怎样在神里面站住</h1>
+      <p class="subtitle">这份讲稿以“短讲 + 问题 + 安静反思”为节奏。目标不是讲满所有知识，而是给孩子留下一条将来可以回到神面前的路。</p>
+      <div class="top-actions">
+        <a href="./">返回讲课页面</a>
+        <a href="https://github.com/cuizihao1992/youth-faith-course-prep">GitHub 仓库</a>
+      </div>
+      <div class="map">
+        <div>主线：离开父母以后，怎样在神里面站住。</div>
+        <div>目标：遇到压力、怀疑、偶像、试探和失败时，可以诚实回到神面前。</div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav>
+        <h2>讲稿导航</h2>
+        <a href="#opening">0-5 开场</a>
+        <a href="#personal">5-15 个人视角</a>
+        <a href="#my-god">15-25 我的神</a>
+        <a href="#voices">25-35 世界声音</a>
+        <a href="#identity">35-45 身份根基</a>
+        <a href="#doubt">45-55 诚实怀疑</a>
+        <a href="#idols">55-65 偶像主题</a>
+        <a href="#advice">65-72 高中大学</a>
+        <a href="#temptation">72-78 试探求助</a>
+        <a href="#anchors">78-85 四个锚点</a>
+        <a href="#closing">85-90 结尾祷告</a>
+      </nav>
+
+      <main>
+        <section id="opening">
+          <div class="title"><span class="time">0-5</span><h2>开场</h2></div>
+          <div class="script">
+            <p>大家好。</p>
+            <p>今天我不想把这 90 分钟讲成一堂课。你们白天已经听了很多课，可能也不缺别人告诉你“你应该怎样怎样”。</p>
+            <p>我更想把今天当成一次提前的聊天。</p>
+            <p>因为你们很快会进入一个新的阶段。可能是高中，也可能是大学。父母不会像以前那样每天在身边提醒你。很多选择、压力、孤独、问题，要开始由你自己面对。</p>
+            <p>所以今天我想聊的不是一个很抽象的题目，而是一个很真实的问题：</p>
+            <div class="summary">当你离开父母以后，你怎样在神里面站住？</div>
+            <div class="question"><strong>安静问题</strong>如果父母不在身边提醒你，你最担心自己在哪方面站不住？</div>
+            <div class="cue">停 10 秒，不用公开回答。</div>
+            <p>我今天不是来考你们，也不是来要求你们以后不能软弱、不能怀疑、不能失败。我想给你们留下一条路：将来你真的软弱、怀疑、失败、被拉扯的时候，不要一个人消失，你可以回到神面前。</p>
+          </div>
+        </section>
+
+        <section id="personal">
+          <div class="title"><span class="time">5-15</span><h2>一点个人视角</h2></div>
+          <div class="script">
+            <p>我自己是大学的时候才信主。</p>
+            <p>所以我回头看初中、高中、大学，会有一种很复杂的感觉。一方面，我感谢神保守我。另一方面，我也会想：如果那时候有人提前跟我讲一些话，也许我会少走一些弯路。</p>
+            <p>我以前也会很在意一些东西：成绩、别人怎么看我、未来要选什么专业、要不要比别人强。后来回头看，有些事当时觉得天大，现在发现真的没有那么大。</p>
+            <p>很多焦虑、攀比、内耗，后来证明并没有解决问题，只是浪费了很多注意力和时间。</p>
+            <p>但我也不是想站在这里说：“你们不要这样，你们要那样。”因为我知道，说教常常没有用。人不是听了一个道理，就自然能做到。很多时候，我自己也知道什么是对的，却做不到。</p>
+            <div class="scripture"><strong>罗马书 7:18-19</strong>立志为善由得我，只是行出来由不得我。</div>
+            <p>这不是给软弱找借口，而是承认：人真正的问题不只是缺少道理，而是心需要被神拯救。</p>
+            <p>所以今天我不是来叫你们装刚强。我是想和你们一起看：当你离开父母、开始自己面对世界时，神给你的路是什么。</p>
+            <div class="cue"><strong>转场</strong>第一件事，不是科学，不是辩论，而是：你要从“父母的神”，走向“我的神”。</div>
+          </div>
+        </section>
+
+        <section id="my-god">
+          <div class="title"><span class="time">15-25</span><h2>从“父母的神”到“我的神”</h2></div>
+          <div class="script">
+            <p>如果你从小来教会，听圣经，有父母为你祷告，有人带你参加聚会，这不是负担，这是神给你的恩典。</p>
+            <p>但恩典不是让你永远停在这里：“我爸妈信，所以我也跟着来。”“家里让我来，所以我就来了。”</p>
+            <p>有一天，你需要自己来到神面前说：主啊，我也想认识你。</p>
+            <div class="scripture"><strong>约翰福音 4:42</strong>现在我们信，不是因为你的话，是我们亲自听见了。</div>
+            <p>父母可以把你带到神面前，但不能替你相信。教会可以把圣经讲给你听，但不能替你认识神。营会可以让你被提醒，但不能替你一辈子跟随主。</p>
+            <div class="question"><strong>安静问题</strong>如果父母不提醒我，我还会不会祷告？还会不会聚会？还会不会来到神面前？</div>
+            <div class="cue">停 20 秒。</div>
+            <p>这不是为了让你害怕，而是让你开始真实地面对神。</p>
+            <div class="scripture"><strong>约书亚记 1:9</strong>你当刚强壮胆，不要惧怕，也不要惊惶；因为你无论往哪里去，耶和华你的神必与你同在。</div>
+            <p>注意这句话不是说：你以后不会害怕。而是说：你害怕的时候，神与你同在。</p>
+            <p>你会离开父母，但神没有离开你。</p>
+            <div class="cue"><strong>转场</strong>当你开始自己面对世界时，你会发现，不只是父母的声音少了，别的声音会越来越多。</div>
+          </div>
+        </section>
+
+        <section id="voices">
+          <div class="title"><span class="time">25-35</span><h2>世界会解释你</h2></div>
+          <div class="script">
+            <p>以后你会听到很多声音。课本会解释世界，老师会解释世界，同学会解释世界，短视频会解释世界，AI 也会解释世界。</p>
+            <p>这些声音不只是给你信息。它们常常也在告诉你：世界从哪里来？人是什么？人生为什么活着？信仰是不是落后？你值不值得被爱？你要怎样才算成功？</p>
+            <p>所以问题不是：这些东西能不能听。问题是：你有没有分辨能力。</p>
+            <p>基督徒不是反科学。科学研究神所造世界的规律。生物、地理、历史、物理、AI，这些都可以认真学。</p>
+            <p>但我们要分清楚：科学可以解释很多“世界怎么运行”的问题，但科学不能自动回答“世界为什么存在”“人为什么有价值”“我为什么活着”。</p>
+            <p>如果一个人从“世界有规律”直接跳到“所以没有创造主”，那已经不只是科学观察，而是世界观结论。</p>
+            <p>AI 也是这样。AI 可以帮你查资料、整理思路、解释概念。但 AI 不是神，不是良心，也不是牧者。</p>
+            <div class="scripture"><strong>箴言 2:6</strong>因为耶和华赐人智慧，知识和聪明都由他口而出。</div>
+            <p>所以你以后可以问 AI，但不要把判断、良心和信仰交给 AI。</p>
+            <div class="question"><strong>分辨问题</strong>这个观点是在解释一个现象，还是在替我决定人生的意义？</div>
+            <div class="cue"><strong>转场</strong>如果你不让圣经解释你，别的东西就会替你解释你。</div>
+          </div>
+        </section>
+
+        <section id="identity">
+          <div class="title"><span class="time">35-45</span><h2>你不是别人评价的总和</h2></div>
+          <div class="script">
+            <p>很多人一生都在被外面的东西定义。成绩好不好，学校好不好，专业好不好，长得好不好，有没有朋友，有没有人喜欢我，别人怎么看我。</p>
+            <p>这些东西不是完全不重要，但它们不能最终定义你。</p>
+            <p>圣经一开始就告诉我们：人是按神的形象被造的。</p>
+            <p>这意味着：你不是偶然。你不是一堆分数的总和。你不是别人一句评价的总和。你不是学校、专业、外貌、关系的总和。</p>
+            <p>你是神所造、神所认识、神所呼召的人。</p>
+            <div class="scripture"><strong>以弗所书 2:10</strong>我们原是他的工作，在基督耶稣里造成的。</div>
+            <div class="question"><strong>心里填空</strong>我最容易用 ______ 定义自己。</div>
+            <p>可能是成绩，可能是外貌，可能是家庭，可能是别人喜不喜欢我，可能是未来能不能成功。</p>
+            <p>你可以把那个东西放在神面前。因为如果那个东西坐到了神的位置，它就会开始控制你。</p>
+            <div class="cue"><strong>转场</strong>可是，就算我们听见这些，心里还是会有问题，会怀疑，会挣扎。</div>
+          </div>
+        </section>
+
+        <section id="doubt">
+          <div class="title"><span class="time">45-55</span><h2>信仰不怕诚实怀疑</h2></div>
+          <div class="script">
+            <p>我想特别对你们说：信仰不怕诚实的怀疑。</p>
+            <p>有时候基督徒会误以为：“我是基督徒，所以我不能怀疑。”“如果我问问题，是不是说明我不属灵？”</p>
+            <p>但圣经不是要你假装没有问题。</p>
+            <div class="scripture"><strong>马可福音 9:24</strong>我信！但我信不足，求主帮助。</div>
+            <p>这是很真实的一句话：我信，但我信不足。我想相信，但我里面也有软弱。主啊，求你帮助。</p>
+            <p>还有多马。别人告诉他说：“我们已经看见主了。”多马没有马上相信。后来耶稣向他显现。耶稣不是害怕多马的问题，而是把多马带进真实的信心里。</p>
+            <p>所以，不要害怕自己像多马。</p>
+            <p>如果你有怀疑，不要以怀疑为羞耻，然后假装自己没有怀疑。假装没有问题，不等于信心更强。</p>
+            <p>但也不要停留在怀疑里。不要拿怀疑当借口远离神。把问题带到神面前，带到圣经面前，也带到成熟基督徒面前。</p>
+            <div class="question"><strong>安静问题</strong>我是在诚实寻求真理，还是在用怀疑逃避神？</div>
+            <div class="cue">停 15 秒。</div>
+            <div class="cue"><strong>转场</strong>很多时候，真正拉走我们的，不只是头脑里的问题，也是心里爱的东西。圣经称这些为偶像。</div>
+          </div>
+        </section>
+
+        <section id="idols">
+          <div class="title"><span class="time">55-65</span><h2>偶像不是古代人的问题</h2></div>
+          <div class="script">
+            <p>一听到偶像，我们可能会想到庙里的像、烧香、求签、算命。这些当然可能是偶像。但圣经讲得更深。</p>
+            <div class="summary">偶像是任何取代神位置的东西。</div>
+            <p>一个东西本来不一定坏。成绩不是坏东西。自由不是坏东西。手机不是坏东西。AI 不是坏东西。关系、未来、成功、人的认可，也不一定是坏东西。</p>
+            <p>但如果它开始定义我、控制我、给我最终安全感，让我为了它违背神，它就成了偶像。</p>
+            <p>有一本讲比较神话的书叫《诸神的面具》。这个名字很有意思。很多文化里的神明和神话，像是人给自己的恐惧、欲望和盼望戴上的面具。</p>
+            <p>古代人可能拜自然、拜丰收、拜星辰、拜神仙体系。现代人不一定拜这些，但会拜成绩、自由、科技、AI、人的认可。</p>
+            <p>偶像换了面具，但人的心没有变。</p>
+            <div class="scripture"><strong>罗马书 1:25</strong>人会敬拜受造之物，不敬拜造物的主。</div>
+            <p>所以偶像最可怕的地方，不是它一定很坏，而是它常常是好东西坐错了位置。</p>
+            <p>成绩坐错位置，会变成神。自由坐错位置，会变成偶像。人的认可坐错位置，会控制你。AI 坐错位置，会替你判断。手机和娱乐坐错位置，会偷走你的心。</p>
+            <div class="question"><strong>安静问题</strong>如果神说：“把这个交给我”，我最舍不得交什么？</div>
+            <div class="cue">停 20 秒。</div>
+            <div class="cue"><strong>转场</strong>所以，高中和大学最需要提醒的，不只是“别犯错”，而是“别让好东西坐到神的位置”。</div>
+          </div>
+        </section>
+
+        <section id="advice">
+          <div class="title"><span class="time">65-72</span><h2>给高中和大学的分别提醒</h2></div>
+          <div class="script">
+            <p>如果你接下来要上高中，我特别想提醒你：你要认真学习。这是责任。不要因为讲信仰，就变成不认真学习。</p>
+            <p>但你也要记住：成绩不是你的神。</p>
+            <p>考好了，不要把自己看得太高。考差了，也不要以为神不要你。成绩可以反映一段时间的学习状态，但不能定义你在神面前是谁。</p>
+            <div class="scripture"><strong>马太福音 6:33</strong>你们要先求他的国和他的义。</div>
+            <p>如果你接下来要上大学，我特别想提醒你：大学最大的变化之一，是自由变多。</p>
+            <p>父母不在身边，作息、关系、消费、时间，很多事都要自己选。</p>
+            <p>但自由不是“我想怎样就怎样”。没人管，不等于心里没有主。</p>
+            <p>真正的自由，是我知道什么该停，什么该逃，什么该交托给神。</p>
+            <p>比如熬夜。偶尔赶作业、考试复习，不能简单说就是罪。但长期熬夜常常不只是几点睡的问题，而是我停不下来、交托不了、被某些东西牵着走。</p>
+            <div class="scripture"><strong>诗篇 127:2</strong>惟有耶和华所亲爱的，必叫他安然睡觉。</div>
+            <p>睡觉也是承认：我不是神。我有限。我需要交托。</p>
+            <div class="cue"><strong>转场</strong>当这些东西开始抓住我们的心，就会变成各种试探。</div>
+          </div>
+        </section>
+
+        <section id="temptation">
+          <div class="title"><span class="time">72-78</span><h2>试探与求助</h2></div>
+          <div class="script">
+            <p>我还想很简短地讲试探。</p>
+            <p>我不会展开讲细节。因为有些东西越讲细，反而越制造好奇。我也不会让任何人当众承认自己的问题。</p>
+            <p>但我想让你们知道：你们以后会遇到各样真实的试探。</p>
+            <p>有些东西会抓住你的时间。有些东西会抓住你的心。有些东西会让你慢慢远离神。</p>
+            <div class="summary">被诱惑不丢人。藏起来、一个人扛才危险。</div>
+            <div class="scripture"><strong>哥林多前书 10:13</strong>神是信实的，在受试探的时候，总要给你们开一条出路。</div>
+            <p>但你要愿意走那条出路。</p>
+            <ol>
+              <li>停：不要继续靠近，不要继续给自己安排入口。</li>
+              <li>问：这个东西会把我带向神，还是带我远离神？</li>
+              <li>转：转向神，转向可信任的人，转向健康的事情。</li>
+            </ol>
+            <p>如果将来你被某件事抓住，不要一个人硬扛。去找父母、牧者、教会长辈、成熟基督徒朋友，说出来。</p>
+            <p>信仰不是一个人逞强。</p>
+          </div>
+        </section>
+
+        <section id="anchors">
+          <div class="title"><span class="time">78-85</span><h2>给他们能抓住的锚点</h2></div>
+          <div class="script">
+            <p>今天你不一定记得住所有内容。其实我也不指望你们把每句话都记住。</p>
+            <p>但我希望你们带走四样东西。</p>
+            <h3>第一，一节经文</h3>
+            <div class="scripture"><strong>约书亚记 1:9</strong>你当刚强壮胆，不要惧怕，也不要惊惶；因为你无论往哪里去，耶和华你的神必与你同在。</div>
+            <div class="scripture"><strong>以赛亚书 41:10</strong>你不要害怕，因为我与你同在；不要惊惶，因为我是你的神。</div>
+            <h3>第二，一句祷告</h3>
+            <p>主啊，我现在不明白，也有点害怕，但我愿意来到你面前，求你帮助我。</p>
+            <h3>第三，一首诗歌</h3>
+            <p>《你不要害怕》。</p>
+            <p>也许将来某一天，你在新的学校、新的宿舍、新的城市里，很孤独，很害怕，很动摇，你忽然想起这首歌，想起神说：不要害怕，我与你同在。</p>
+            <h3>第四，一个可以说真话的人</h3>
+            <p>父母、牧者、教会长辈、成熟基督徒朋友。</p>
+            <p>不要等到完全撑不住才说。不要突然消失。</p>
+            <div class="scripture"><strong>加拉太书 6:2</strong>你们各人的重担要互相担当。</div>
+          </div>
+        </section>
+
+        <section id="closing">
+          <div class="title"><span class="time">85-90</span><h2>结尾和祷告</h2></div>
+          <div class="script">
+            <p>最后，我只想再收成三句话。</p>
+            <div class="summary">第一，你会离开父母，但神没有离开你。</div>
+            <div class="summary">第二，有问题不要假装，把问题带到神面前。</div>
+            <div class="summary">第三，不要让别人随便解释你，要让圣经成为你的根基。</div>
+            <p>我不是要告诉你们，以后你们不会害怕、不会失败、不会怀疑。我想告诉你们的是：当你害怕的时候，神仍与你同在；当你失败的时候，你仍可以回到神面前；当你怀疑的时候，主没有怕你的问题。</p>
+            <div class="scripture"><strong>约翰福音 16:33</strong>在世上你们有苦难；但你们可以放心，我已经胜了世界。</div>
+            <p>所以，盼望不是我不会软弱。盼望是我软弱时，仍有一位主可以回去。</p>
+            <h3>结束祷告</h3>
+            <p>主啊，求你怜悯这些孩子。</p>
+            <p>他们将来会进入新的学校、新的环境、新的关系，也会面对新的压力、自由、怀疑和试探。</p>
+            <p>求你让他们不是假装相信，也不是轻易远离你。</p>
+            <p>当他们害怕的时候，求你让他们想起：你没有离开他们。当他们怀疑的时候，求你让他们把问题带到你面前。当他们失败的时候，求你让他们不要躲起来，而是回到你面前。</p>
+            <p>当世界用成绩、自由、人的认可、AI、成功来定义他们时，求你让他们记得：他们是你所造、所爱、所呼召的人。</p>
+            <p>也求你为他们预备可以说真话的人，父母、牧者、教会长辈、成熟的基督徒朋友。</p>
+            <p>愿你的话成为他们脚前的灯、路上的光。</p>
+            <p>奉主耶稣基督的名祷告，阿们。</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      讲员提醒：这份稿子可以删减。不要试图用 90 分钟改变所有人；只要忠心给他们留下一条回到神面前的路。
+    </footer>
+  </div>
+</body>
+</html>
