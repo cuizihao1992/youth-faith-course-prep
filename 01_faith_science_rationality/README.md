@@ -2,6 +2,12 @@
 
 ## 最终讲课文件
 
+### 00_FINAL_READ_ME_FIRST.md
+
+最终入口。
+
+讲课前先看这个文件。它只保留主题、主线、必讲内容、可删内容和最终文件位置。
+
 ### 00_speaker_quick_start.md
 
 讲课前快速进入状态。
@@ -20,16 +26,33 @@
 
 用来实际讲课，包含开场、转场、互动问题、活动和结束祷告。
 
+### 32_full_90_minute_talk_script.md
+
+当前最成熟的故事版完整讲稿。
+
+正式讲课以这个为准。
+
+### 40_integrated_optimization_plan.md
+
+综合优化方案。
+
+用于判断哪些内容是主线，哪些内容应降级为备用。
+
 ## 使用建议
 
-讲课前主要看两个文件：
+讲课前主要看三个文件：
 
-1. `01_content_outline.md`
-2. `02_session_script.md`
+1. `00_FINAL_READ_ME_FIRST.md`
+2. `32_full_90_minute_talk_script.md`
+3. `leaving_home_faith_talk_story_version.pptx`
+
+如果需要看原始提纲，再看 `01_content_outline.md`。
 
 如果需要调整开场、结尾或中间逻辑，再看 `04_opening_options.md`、`05_closing_options.md`、`06_middle_flow.md`。
 
 如果需要更少说教、更有互动地讲，再看 `13_guiding_questions.md`。
+
+如果需要判断整体结构，再看 `40_integrated_optimization_plan.md`。
 
 ## 这堂课不追求
 
