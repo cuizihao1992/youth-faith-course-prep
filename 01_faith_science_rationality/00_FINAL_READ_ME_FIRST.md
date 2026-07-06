@@ -33,6 +33,10 @@ PPT：
 
 - `40_integrated_optimization_plan.md`
 
+内容串联和局部调整建议：
+
+- `41_content_flow_and_local_adjustments.md`
+
 ## 讲课主线
 
 1. 我以为自由就是没人管，后来发现自由意味着要负责。

@@ -38,6 +38,12 @@
 
 用于判断哪些内容是主线，哪些内容应降级为备用。
 
+### 41_content_flow_and_local_adjustments.md
+
+内容层面的调整建议。
+
+用于修改正式讲稿时判断整体结构、转场逻辑和局部取舍。
+
 ## 使用建议
 
 讲课前主要看三个文件：
@@ -53,6 +59,8 @@
 如果需要更少说教、更有互动地讲，再看 `13_guiding_questions.md`。
 
 如果需要判断整体结构，再看 `40_integrated_optimization_plan.md`。
+
+如果需要具体改讲稿，再看 `41_content_flow_and_local_adjustments.md`。
 
 ## 这堂课不追求
 

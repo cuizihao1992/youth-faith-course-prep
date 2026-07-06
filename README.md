@@ -18,6 +18,7 @@
 - `02_session_script.md`：课程脚本，回答“怎么讲”。
 - `32_full_90_minute_talk_script.md`：当前最成熟的故事版完整讲稿。
 - `40_integrated_optimization_plan.md`：综合优化方案，回答“哪些是主线，哪些是备用”。
+- `41_content_flow_and_local_adjustments.md`：内容层面的结构、串联和局部取舍建议。
 - `03_biblical_basis_for_answers.md`：课堂、考试、信仰回应的圣经依据。
 - `04_opening_options.md`：如何切入主题。
 - `05_closing_options.md`：如何结尾。
