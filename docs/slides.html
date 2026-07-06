@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML 幻灯片｜离开父母以后，怎样在神里面站住</title>
+  <style>
+    :root {
+      --ink: #171717;
+      --muted: #59636c;
+      --paper: #faf8f2;
+      --panel: #ffffff;
+      --line: #d9ded8;
+      --green: #1f6b4a;
+      --blue: #315f7d;
+      --gold: #9a6a1d;
+      --red: #9a3f36;
+      --soft-green: #e6f2ea;
+      --soft-blue: #e8f0f5;
+      --soft-gold: #f7efd9;
+      --soft-red: #f8e8e4;
+      --shadow: 0 18px 50px rgba(18, 25, 31, .16);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      background: #e7ece8;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+      line-height: 1.45;
+      background: #e7ece8;
+    }
+
+    a { color: inherit; }
+
+    .toolbar {
+      position: fixed;
+      z-index: 10;
+      top: 14px;
+      right: 14px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .toolbar a,
+    .toolbar button {
+      border: 1px solid rgba(23, 23, 23, .18);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, .9);
+      color: var(--ink);
+      text-decoration: none;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(18, 25, 31, .08);
+    }
+
+    .deck {
+      width: min(100%, 1500px);
+      margin: 0 auto;
+      padding: 28px 20px;
+    }
+
+    .slide {
+      position: relative;
+      min-height: min(92vh, 820px);
+      aspect-ratio: 16 / 9;
+      margin: 0 auto 28px;
+      padding: 56px 68px 54px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      overflow: hidden;
+      scroll-snap-align: start;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 10px;
+      background: linear-gradient(90deg, var(--green), var(--blue), var(--gold));
+    }
+
+    .kicker {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      max-width: 980px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    h1 { font-size: 56px; }
+    h2 { font-size: 44px; }
+
+    .content {
+      align-self: center;
+      display: grid;
+      gap: 22px;
+    }
+
+    .lead {
+      max-width: 980px;
+      margin: 0;
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1.34;
+    }
+
+    .quote {
+      margin: 0;
+      padding: 24px 28px;
+      background: var(--ink);
+      color: #fff;
+      font-size: 34px;
+      font-weight: 900;
+      line-height: 1.36;
+    }
+
+    .verse {
+      margin: 0;
+      padding: 18px 22px;
+      background: var(--soft-green);
+      border-left: 8px solid var(--green);
+      color: #183d2d;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card {
+      padding: 22px 24px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-left: 8px solid var(--green);
+    }
+
+    .card.blue { border-left-color: var(--blue); background: var(--soft-blue); }
+    .card.gold { border-left-color: var(--gold); background: var(--soft-gold); }
+    .card.red { border-left-color: var(--red); background: var(--soft-red); }
+
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 28px;
+      font-size: 27px;
+      font-weight: 850;
+      line-height: 1.45;
+    }
+
+    li { margin: 10px 0; }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+      font-size: 23px;
+      font-weight: 850;
+    }
+
+    .timeline div {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 16px;
+      padding: 12px 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .timeline span {
+      color: var(--green);
+      font-weight: 950;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .page-no {
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 950;
+    }
+
+    .dark {
+      background: #17211d;
+      color: #fff;
+    }
+
+    .dark::before {
+      background: linear-gradient(90deg, #88c09f, #8bb4cd, #e0bd68);
+    }
+
+    .dark .kicker,
+    .dark .note,
+    .dark .footer {
+      color: #c9d7ce;
+    }
+
+    .dark .quote {
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .dark .verse {
+      color: #f7f4e9;
+      background: rgba(255, 255, 255, .12);
+      border-left-color: #e0bd68;
+    }
+
+    @media (max-width: 900px) {
+      .toolbar { display: none; }
+      .deck { padding: 12px; }
+      .slide {
+        min-height: 92vh;
+        aspect-ratio: auto;
+        padding: 42px 28px 34px;
+      }
+      h1 { font-size: 36px; }
+      h2 { font-size: 31px; }
+      .lead, ul { font-size: 22px; }
+      .quote { font-size: 25px; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .timeline div { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      html, body { background: #fff; }
+      .toolbar { display: none; }
+      .deck { width: 100%; padding: 0; }
+      .slide {
+        width: 100vw;
+        height: 100vh;
+        min-height: 100vh;
+        margin: 0;
+        box-shadow: none;
+        border: 0;
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar" aria-label="幻灯片工具栏">
+    <a href="./">首页</a>
+    <a href="full-talk-script.html">讲稿</a>
+    <button type="button" id="prev">上一页</button>
+    <button type="button" id="next">下一页</button>
+  </div>
+
+  <main class="deck">
+    <section class="slide dark" id="s01">
+      <div>
+        <p class="kicker">营会分享｜给将要离开父母的孩子</p>
+        <h1>离开父母以后，怎样在神里面站住</h1>
+      </div>
+      <div class="content">
+        <p class="quote">撑不住的时候，不要躲开神。</p>
+        <p class="note">不是讲漂亮话，而是讲一段真实走过的路。</p>
+      </div>
+      <div class="footer"><span>主题句</span><span class="page-no">01</span></div>
+    </section>
+
+    <section class="slide" id="s02">
+      <div>
+        <p class="kicker">开场</p>
+        <h2>先讲一件不太光彩的事</h2>
+      </div>
+      <div class="content">
+        <p class="lead">大一第一学期，高数 78。</p>
+        <div class="grid-2">
+          <div class="card"><strong>不是灾难</strong><p>离挂科还远，但也没什么可骄傲。</p></div>
+          <div class="card blue"><strong>真正的问题</strong><p>我以为大学像高考，最后冲一下就行。</p></div>
+        </div>
+        <p class="verse">自由不是没人管我，而是我开始要为自己的选择负责。</p>
+      </div>
+      <div class="footer"><span>以弗所书 5:15-16</span><span class="page-no">02</span></div>
+    </section>
+
+    <section class="slide" id="s03">
+      <div>
+        <p class="kicker">时间</p>
+        <h2>不要把最宝贵的时间交给风气</h2>
+      </div>
+      <div class="content">
+        <ul>
+          <li>“大学就该玩。”</li>
+          <li>“大家都这样。”</li>
+          <li>“现在先放松，以后再努力。”</li>
+        </ul>
+        <p class="lead">这些话听起来轻松，代价可能是你自己付。</p>
+      </div>
+      <div class="footer"><span>不是不能玩，是要知道什么更重要</span><span class="page-no">03</span></div>
+    </section>
+
+    <section class="slide" id="s04">
+      <div>
+        <p class="kicker">我的路</p>
+        <h2>我不是一下子信主的</h2>
+      </div>
+      <div class="content">
+        <div class="timeline">
+          <div><span>小时候</span>奶奶带我去教会，我不太信，也不太排斥。</div>
+          <div><span>初中后</span>学了物理地理，觉得“天上没有天堂”，更不信了。</div>
+          <div><span>大二左右</span>迷茫、灰暗，开始问人生能不能改变。</div>
+          <div><span>大学后来</span>火车上遇到基督徒学长，收到第一本圣经。</div>
+        </div>
+      </div>
+      <div class="footer"><span>回头看，是神一步一步带领</span><span class="page-no">04</span></div>
+    </section>
+
+    <section class="slide" id="s05">
+      <div>
+        <p class="kicker">误解</p>
+        <h2>我曾经把“天上”想得太小</h2>
+      </div>
+      <div class="content">
+        <div class="grid-2">
+          <div class="card"><strong>当时的想法</strong><p>人坐飞机到天上，看到的是云、星星、太空，没看到天堂。</p></div>
+          <div class="card blue"><strong>后来才明白</strong><p>圣经里的神不是住在宇宙某个角落的物体。</p></div>
+        </div>
+        <p class="verse">“天和天上的天尚且不足你居住。”——列王纪上 8:27</p>
+      </div>
+      <div class="footer"><span>疑问不一定可怕，关键是愿不愿意继续寻找</span><span class="page-no">05</span></div>
+    </section>
+
+    <section class="slide" id="s06">
+      <div>
+        <p class="kicker">灰暗</p>
+        <h2>我最深的问题不是找工作</h2>
+      </div>
+      <div class="content">
+        <ul>
+          <li>能不能找到好工作？能赚多少钱？</li>
+          <li>人真的能幸福吗？婚姻和家庭有盼望吗？</li>
+          <li>我会不会变成自己讨厌的人？</li>
+        </ul>
+        <p class="lead">最深的问题：人真的能改变吗？</p>
+      </div>
+      <div class="footer"><span>罗马书 7:19</span><span class="page-no">06</span></div>
+    </section>
+
+    <section class="slide" id="s07">
+      <div>
+        <p class="kicker">寺庙</p>
+        <h2>那时我想躲起来，把自己修好</h2>
+      </div>
+      <div class="content">
+        <div class="grid-2">
+          <div class="card"><strong>不是找到真理</strong><p>更像是现实太复杂，想找个安静地方逃开。</p></div>
+          <div class="card gold"><strong>不是攻击佛教</strong><p>佛教确实看见痛苦、执着和无常。</p></div>
+        </div>
+        <p class="quote">福音不是人努力修好自己，而是神在基督里拯救不能自救的人。</p>
+      </div>
+      <div class="footer"><span>以弗所书 2:8-9</span><span class="page-no">07</span></div>
+    </section>
+
+    <section class="slide" id="s08">
+      <div>
+        <p class="kicker">第一本圣经</p>
+        <h2>火车上的一次聊天</h2>
+      </div>
+      <div class="content">
+        <ul>
+          <li>我在火车上看《宗教学导论》。</li>
+          <li>旁边一位学长和我聊起来。</li>
+          <li>后来才知道，他是基督徒。</li>
+          <li>他当场送了我人生第一本圣经。</li>
+        </ul>
+      </div>
+      <div class="footer"><span>当时像偶然，回头看是一环扣一环</span><span class="page-no">08</span></div>
+    </section>
+
+    <section class="slide" id="s09">
+      <div>
+        <p class="kicker">被吸引</p>
+        <h2>我不是先把所有问题想通了</h2>
+      </div>
+      <div class="content">
+        <div class="grid-3">
+          <div class="card"><strong>圣经</strong><p>原来有历史、书信，也有很有智慧的话。</p></div>
+          <div class="card blue"><strong>人</strong><p>基督徒的生命、友善、喜乐吸引我。</p></div>
+          <div class="card gold"><strong>敬拜</strong><p>“一宿虽然有哭泣，早晨我们必欢呼。”</p></div>
+        </div>
+        <p class="lead">信主更像一个决定：我愿意试着相信这位神是真的。</p>
+      </div>
+      <div class="footer"><span>后来才知道：不是我先找到神，是神先找我</span><span class="page-no">09</span></div>
+    </section>
+
+    <section class="slide" id="s10">
+      <div>
+        <p class="kicker">离开父母</p>
+        <h2>没有人提醒你的那一天</h2>
+      </div>
+      <div class="content">
+        <p class="lead">你会开始自己面对选择、压力、孤独、问题。</p>
+        <div class="grid-2">
+          <div class="card"><strong>外面没人催</strong><p>但心里仍然需要一位主。</p></div>
+          <div class="card blue"><strong>真正的根基</strong><p>不是父母在旁边，而是神与你同在。</p></div>
+        </div>
+        <p class="verse">“你当刚强壮胆……因为你无论往哪里去，耶和华你的神必与你同在。”——约书亚记 1:9</p>
+      </div>
+      <div class="footer"><span>不是不害怕，而是害怕时有神同在</span><span class="page-no">10</span></div>
+    </section>
+
+    <section class="slide" id="s11">
+      <div>
+        <p class="kicker">世界观</p>
+        <h2>世界会给你很多答案</h2>
+      </div>
+      <div class="content">
+        <div class="grid-3">
+          <div class="card"><strong>学校</strong><p>考试、知识、规则。</p></div>
+          <div class="card blue"><strong>同学和网络</strong><p>流行、比较、价值感。</p></div>
+          <div class="card gold"><strong>AI</strong><p>快速、完整、很像有道理。</p></div>
+        </div>
+        <p class="lead">这些不是都不能听，但不能让它们替你定义人生。</p>
+      </div>
+      <div class="footer"><span>箴言 2:6</span><span class="page-no">11</span></div>
+    </section>
+
+    <section class="slide" id="s12">
+      <div>
+        <p class="kicker">AI</p>
+        <h2>AI 很强，但不是你的主人</h2>
+      </div>
+      <div class="content">
+        <ul>
+          <li>它可以帮你查资料、整理思路、练习表达。</li>
+          <li>它可以写“我爱你”，但它真的爱你吗？</li>
+          <li>它可以写悔改祷告，但它真的悔改吗？</li>
+          <li>它可以解释敬拜，但它真的敬拜神吗？</li>
+        </ul>
+      </div>
+      <div class="footer"><span>工具可以用，良心和信仰不能交出去</span><span class="page-no">12</span></div>
+    </section>
+
+    <section class="slide" id="s13">
+      <div>
+        <p class="kicker">AI 与人</p>
+        <h2>AI 提醒我们重新惊叹人的奇妙</h2>
+      </div>
+      <div class="content">
+        <div class="grid-2">
+          <div class="card"><strong>造一个 AI</strong><p>需要数据、数学、芯片、能源、工程、顶尖人才。</p></div>
+          <div class="card blue"><strong>真正的人</strong><p>会爱、会羞愧、会盼望，会问“我为什么活着”。</p></div>
+        </div>
+        <p class="verse">“房屋都必有人建造，但建造万物的就是神。”——希伯来书 3:4</p>
+      </div>
+      <div class="footer"><span>不要把人看成高级机器</span><span class="page-no">13</span></div>
+    </section>
+
+    <section class="slide" id="s14">
+      <div>
+        <p class="kicker">有限</p>
+        <h2>人会在不可控面前寻找依靠</h2>
+      </div>
+      <div class="content">
+        <p class="lead">宗教学有一种观察：人从自己的有限，想到无限。</p>
+        <div class="grid-2">
+          <div class="card"><strong>江河、星空、死亡、灾难</strong><p>人意识到：我不是最终掌控者。</p></div>
+          <div class="card gold"><strong>航天五院的例子</strong><p>很技术的场景里，人仍然会寻找保佑、平安和确定感。</p></div>
+        </div>
+        <p class="verse">真正的问题不是“人有没有敬拜”，而是“我把惧怕和平安交给谁”。</p>
+      </div>
+      <div class="footer"><span>传道书 3:11；罗马书 1:25</span><span class="page-no">14</span></div>
+    </section>
+
+    <section class="slide" id="s15">
+      <div>
+        <p class="kicker">偶像</p>
+        <h2>好东西也可能变成假主人</h2>
+      </div>
+      <div class="content">
+        <div class="grid-3">
+          <div class="card"><strong>成绩</strong><p>很重要，但不能定义你值多少钱。</p></div>
+          <div class="card blue"><strong>自由</strong><p>没人管，不等于心里没有主。</p></div>
+          <div class="card red"><strong>游戏/娱乐</strong><p>如果已经不享受却停不下来，就不只是娱乐。</p></div>
+        </div>
+        <p class="verse">“凡事我都可行，但无论哪一件，我总不受它的辖制。”——哥林多前书 6:12</p>
+      </div>
+      <div class="footer"><span>偶像不一定丑，常常很有吸引力</span><span class="page-no">15</span></div>
+    </section>
+
+    <section class="slide" id="s16">
+      <div>
+        <p class="kicker">比较</p>
+        <h2>排行榜会换皮肤，但不会自动消失</h2>
+      </div>
+      <div class="content">
+        <ul>
+          <li>高中比年级排名。</li>
+          <li>大学比学校、专业、保研、实习。</li>
+          <li>工作后比城市、收入、平台、朋友圈。</li>
+        </ul>
+        <p class="quote">你考好以前，神认识你；你考差以后，神也没有把你丢掉。</p>
+      </div>
+      <div class="footer"><span>创世记 1:27</span><span class="page-no">16</span></div>
+    </section>
+
+    <section class="slide" id="s17">
+      <div>
+        <p class="kicker">怀疑</p>
+        <h2>有怀疑，不要装</h2>
+      </div>
+      <div class="content">
+        <div class="grid-2">
+          <div class="card"><strong>那个父亲</strong><p>“我信！但我信不足，求主帮助。”</p></div>
+          <div class="card blue"><strong>多马</strong><p>不要害怕像多马，但也不要拿怀疑当借口远离神。</p></div>
+        </div>
+        <p class="lead">把问题带到祷告里，带到圣经里，也带到成熟基督徒面前。</p>
+      </div>
+      <div class="footer"><span>马可福音 9:24；约翰福音 20</span><span class="page-no">17</span></div>
+    </section>
+
+    <section class="slide" id="s18">
+      <div>
+        <p class="kicker">试探</p>
+        <h2>被试探不丢人，藏起来才危险</h2>
+      </div>
+      <div class="content">
+        <div class="grid-3">
+          <div class="card"><strong>停</strong><p>不要继续靠近入口。</p></div>
+          <div class="card blue"><strong>问</strong><p>这会把我带向神，还是远离神？</p></div>
+          <div class="card gold"><strong>转</strong><p>转向神、可信任的人、健康的事情。</p></div>
+        </div>
+        <p class="verse">神是信实的，总要给你们开一条出路。——哥林多前书 10:13</p>
+      </div>
+      <div class="footer"><span>不讲猎奇细节，不要求当众认罪</span><span class="page-no">18</span></div>
+    </section>
+
+    <section class="slide" id="s19">
+      <div>
+        <p class="kicker">高中</p>
+        <h2>给要上高中的你</h2>
+      </div>
+      <div class="content">
+        <ul>
+          <li>认真学习，这是你现在真实的责任。</li>
+          <li>不懂的问题尽量不过夜。</li>
+          <li>不要让成绩成为你的神。</li>
+          <li>你需要努力，也需要知道自己不是靠成绩被神爱。</li>
+        </ul>
+      </div>
+      <div class="footer"><span>学习是责任，不是身份</span><span class="page-no">19</span></div>
+    </section>
+
+    <section class="slide" id="s20">
+      <div>
+        <p class="kicker">大学</p>
+        <h2>给要上大学的你</h2>
+      </div>
+      <div class="content">
+        <ul>
+          <li>珍惜最后一段有同学共同成长的时间。</li>
+          <li>不要把自由理解成彻底放飞。</li>
+          <li>英语、阅读、专业基础，会在以后帮你很多。</li>
+          <li>找一个能说真话、能一起祷告的人。</li>
+        </ul>
+      </div>
+      <div class="footer"><span>自由需要根基，也需要边界</span><span class="page-no">20</span></div>
+    </section>
+
+    <section class="slide" id="s21">
+      <div>
+        <p class="kicker">带走</p>
+        <h2>给你们能抓住的四样东西</h2>
+      </div>
+      <div class="content">
+        <div class="grid-2">
+          <div class="card"><strong>一节经文</strong><p>约书亚记 1:9</p></div>
+          <div class="card blue"><strong>一句祷告</strong><p>主啊，我不明白，也害怕，求你帮助我。</p></div>
+          <div class="card gold"><strong>一首诗歌</strong><p>《你不要害怕》</p></div>
+          <div class="card red"><strong>一个人</strong><p>父母、牧者、长辈、成熟基督徒朋友。</p></div>
+        </div>
+      </div>
+      <div class="footer"><span>不要等到完全撑不住才说</span><span class="page-no">21</span></div>
+    </section>
+
+    <section class="slide dark" id="s22">
+      <div>
+        <p class="kicker">结尾</p>
+        <h2>最后只收成三句话</h2>
+      </div>
+      <div class="content">
+        <ul>
+          <li>你会离开父母，但神没有离开你。</li>
+          <li>有问题不要假装，把问题带到神面前。</li>
+          <li>神可能已经在你生命里放下很多线索，不要轻看今天。</li>
+        </ul>
+        <p class="quote">在世上你们有苦难；但你们可以放心，我已经胜了世界。</p>
+      </div>
+      <div class="footer"><span>约翰福音 16:33</span><span class="page-no">22</span></div>
+    </section>
+  </main>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    let current = 0;
+
+    function nearestSlideIndex() {
+      const mid = window.scrollY + window.innerHeight / 2;
+      let best = 0;
+      let bestDistance = Infinity;
+      slides.forEach((slide, index) => {
+        const center = slide.offsetTop + slide.offsetHeight / 2;
+        const distance = Math.abs(center - mid);
+        if (distance < bestDistance) {
+          best = index;
+          bestDistance = distance;
+        }
+      });
+      return best;
+    }
+
+    function go(delta) {
+      current = Math.max(0, Math.min(slides.length - 1, nearestSlideIndex() + delta));
+      slides[current].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    document.getElementById('prev').addEventListener('click', () => go(-1));
+    document.getElementById('next').addEventListener('click', () => go(1));
+    window.addEventListener('keydown', (event) => {
+      if (['ArrowRight', 'PageDown', ' '].includes(event.key)) {
+        event.preventDefault();
+        go(1);
+      }
+      if (['ArrowLeft', 'PageUp'].includes(event.key)) {
+        event.preventDefault();
+        go(-1);
+      }
+      if (event.key === 'Home') {
+        event.preventDefault();
+        slides[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (event.key === 'End') {
+        event.preventDefault();
+        slides[slides.length - 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  </script>
+</body>
+</html>
