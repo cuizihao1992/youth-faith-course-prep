@@ -7,27 +7,20 @@
   <style>
     :root {
       --ink: #171717;
-      --muted: #5e6670;
+      --muted: #59636c;
       --paper: #faf8f2;
       --panel: #ffffff;
-      --soft: #f1f4f2;
       --line: #d9ded8;
       --green: #1f6b4a;
       --blue: #315f7d;
       --gold: #9a6a1d;
-      --red: #9a3f36;
-      --violet: #625293;
-      --green-soft: #e6f2ea;
-      --blue-soft: #e8f0f5;
-      --gold-soft: #f7efd9;
-      --red-soft: #f8e8e4;
-      --violet-soft: #eeeaf7;
-      --shadow: 0 18px 45px rgba(18, 25, 31, .10);
+      --soft-green: #e6f2ea;
+      --soft-blue: #e8f0f5;
+      --soft-gold: #f7efd9;
+      --shadow: 0 18px 45px rgba(18, 25, 31, .12);
     }
 
     * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -40,20 +33,20 @@
     a { color: inherit; }
 
     .page {
-      width: min(1360px, calc(100% - 40px));
+      width: min(1180px, calc(100% - 40px));
       margin: 24px auto;
       background: var(--paper);
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
     }
 
-    .hero {
+    header {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 390px;
-      gap: 26px;
-      padding: 34px 38px 30px;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 24px;
+      padding: 38px 42px 34px;
       background:
-        linear-gradient(120deg, rgba(31, 107, 74, .08), rgba(49, 95, 125, .08)),
+        linear-gradient(120deg, rgba(31, 107, 74, .09), rgba(49, 95, 125, .08)),
         var(--panel);
       border-bottom: 4px solid var(--ink);
     }
@@ -62,838 +55,193 @@
       margin: 0 0 10px;
       color: var(--green);
       font-size: 14px;
-      font-weight: 800;
-      letter-spacing: 0;
+      font-weight: 900;
     }
 
     h1 {
       margin: 0;
-      max-width: 780px;
-      font-size: clamp(30px, 4vw, 48px);
+      max-width: 760px;
+      font-size: clamp(32px, 4vw, 50px);
       line-height: 1.12;
       letter-spacing: 0;
     }
 
     .subtitle {
-      max-width: 780px;
-      margin: 14px 0 0;
+      max-width: 800px;
+      margin: 16px 0 0;
       color: var(--muted);
-      font-size: 17px;
+      font-size: 18px;
     }
 
-    .target-box {
-      align-self: stretch;
-      padding: 20px;
+    .quote {
+      padding: 22px;
       background: var(--ink);
       color: #fff;
       display: grid;
-      gap: 14px;
+      gap: 12px;
+      align-content: center;
     }
 
-    .target-box strong {
-      display: block;
-      font-size: 15px;
+    .quote strong {
+      font-size: 24px;
+      line-height: 1.35;
+    }
+
+    .quote p {
+      margin: 0;
       color: #dfece4;
     }
 
-    .target-box p {
-      margin: 0;
-      font-size: 22px;
-      line-height: 1.35;
-      font-weight: 900;
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
     }
 
-    .target-link {
+    .actions a {
       display: inline-block;
-      width: fit-content;
-      padding: 9px 12px;
-      color: var(--ink);
+      padding: 10px 13px;
+      border: 1px solid var(--line);
       background: #fff;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 900;
     }
 
-    .three-lines {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      padding: 18px 38px;
-      background: var(--panel);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .three-lines div {
-      min-height: 92px;
-      padding: 15px 16px;
-      display: flex;
-      align-items: center;
-      background: var(--green-soft);
-      border: 1px solid #c7dece;
-      border-left: 6px solid var(--green);
-      font-size: 18px;
-      font-weight: 900;
-      line-height: 1.38;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 248px minmax(0, 1fr);
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      padding: 22px 18px;
-      overflow: auto;
-      background: #f4f6f1;
-      border-right: 1px solid var(--line);
-    }
-
-    nav h2 {
-      margin: 0 0 14px;
-      font-size: 16px;
-    }
-
-    nav a {
-      display: block;
-      margin: 0 0 8px;
-      padding: 9px 10px;
-      color: var(--ink);
-      text-decoration: none;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    nav a:hover {
-      border-color: var(--green);
-      background: var(--green-soft);
-    }
-
     main {
-      padding: 28px 34px 46px;
-    }
-
-    section {
-      margin: 0 0 34px;
-      scroll-margin-top: 22px;
-    }
-
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 0 0 16px;
-    }
-
-    .num {
-      width: 38px;
-      height: 38px;
-      display: inline-grid;
-      place-items: center;
-      flex: 0 0 auto;
-      color: #fff;
-      background: var(--ink);
-      font-weight: 900;
+      padding: 30px 42px 42px;
     }
 
     h2 {
-      margin: 0;
-      font-size: 25px;
-      line-height: 1.25;
+      margin: 0 0 16px;
+      font-size: 28px;
       letter-spacing: 0;
     }
 
-    h3 {
-      margin: 0 0 9px;
-      font-size: 18px;
-      line-height: 1.28;
-      letter-spacing: 0;
-    }
-
-    p { margin: 8px 0; }
-
-    ul, ol {
-      margin: 8px 0 0 21px;
-      padding: 0;
-    }
-
-    li { margin: 5px 0; }
-
-    .muted {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .grid-2,
-    .grid-3,
-    .grid-4 {
+    .grid {
       display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
     }
-
-    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
     .card {
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: 6px;
-      padding: 16px;
-    }
-
-    .card.green { border-top: 5px solid var(--green); }
-    .card.blue { border-top: 5px solid var(--blue); }
-    .card.gold { border-top: 5px solid var(--gold); }
-    .card.red { border-top: 5px solid var(--red); }
-    .card.violet { border-top: 5px solid var(--violet); }
-
-    .callout,
-    .scripture,
-    .warning,
-    .hope,
-    .speaker-line {
-      margin: 12px 0;
-      padding: 13px 15px;
-      border-radius: 6px;
-      border-left: 6px solid var(--gold);
-      background: var(--gold-soft);
-    }
-
-    .scripture {
-      border-left-color: var(--green);
-      background: var(--green-soft);
-    }
-
-    .warning {
-      border-left-color: var(--red);
-      background: var(--red-soft);
-    }
-
-    .hope {
-      border-left-color: var(--blue);
-      background: var(--blue-soft);
-      font-weight: 800;
-    }
-
-    .speaker-line {
-      border-left-color: var(--violet);
-      background: var(--violet-soft);
-    }
-
-    .callout strong,
-    .scripture strong,
-    .warning strong,
-    .hope strong,
-    .speaker-line strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .map {
-      display: grid;
-      gap: 10px;
-    }
-
-    .map-row {
-      display: grid;
-      grid-template-columns: 120px 160px minmax(0, 1fr) 210px;
-      gap: 10px;
-      align-items: stretch;
-    }
-
-    .map-row > div {
-      padding: 12px;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 6px;
-    }
-
-    .time {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      background: var(--blue) !important;
-      border-color: var(--blue) !important;
-      font-weight: 900;
-    }
-
-    .stage {
-      font-weight: 900;
-    }
-
-    .tag {
-      display: inline-block;
-      margin: 0 6px 6px 0;
-      padding: 4px 8px;
-      border-radius: 999px;
-      color: #fff;
-      background: var(--green);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .tag.blue { background: var(--blue); }
-    .tag.gold { background: var(--gold); }
-    .tag.red { background: var(--red); }
-    .tag.violet { background: var(--violet); }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      font-size: 14px;
-    }
-
-    th, td {
-      border: 1px solid var(--line);
-      padding: 10px;
-      vertical-align: top;
-    }
-
-    th {
-      background: var(--soft);
-      text-align: left;
-      font-size: 13px;
-    }
-
-    .script-block {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 6px;
+      border-left: 8px solid var(--green);
+      border-radius: 8px;
       padding: 18px;
     }
 
-    .script-block p {
-      margin: 0 0 12px;
+    .card:nth-child(2n) {
+      border-left-color: var(--blue);
+      background: var(--soft-blue);
     }
 
-    .script-block p:last-child {
-      margin-bottom: 0;
+    .card:nth-child(3n) {
+      border-left-color: var(--gold);
+      background: var(--soft-gold);
     }
 
-    .compact-list li {
-      margin: 3px 0;
+    .card span {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 10px;
+      background: var(--ink);
+      color: #fff;
+      border-radius: 50%;
+      font-weight: 900;
     }
 
-    .boundary {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
+    h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
+      letter-spacing: 0;
     }
 
-    .boundary .card:first-child {
-      background: #fbfdfb;
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      font-weight: 700;
     }
 
-    .boundary .card:last-child {
-      background: #fffafa;
+    .note {
+      margin-top: 22px;
+      padding: 16px 18px;
+      background: var(--soft-green);
+      border-left: 8px solid var(--green);
+      font-weight: 900;
     }
 
     footer {
-      padding: 22px 38px 34px;
+      padding: 22px 42px 34px;
       background: var(--panel);
       border-top: 1px solid var(--line);
+      color: var(--muted);
     }
 
-    footer strong {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    @media print {
-      body { background: #fff; }
+    @media (max-width: 860px) {
       .page {
         width: 100%;
         margin: 0;
-        border: none;
-        box-shadow: none;
+        border: 0;
       }
-      nav { display: none; }
-      .layout { display: block; }
-      section { break-inside: avoid; }
-      .hero, .three-lines, main, footer {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-    }
 
-    @media (max-width: 1080px) {
-      .hero,
-      .layout {
+      header {
         grid-template-columns: 1fr;
+        padding: 28px 22px;
       }
-      nav {
-        position: static;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid var(--line);
-      }
-      nav a {
-        display: inline-block;
-        margin-right: 6px;
-      }
-      .map-row {
-        grid-template-columns: 1fr;
-      }
-    }
 
-    @media (max-width: 760px) {
-      .page {
-        width: 100%;
-        margin: 0;
-        border: none;
-      }
-      .hero,
-      .three-lines,
       main,
       footer {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 22px;
+        padding-right: 22px;
       }
-      .three-lines,
-      .grid-2,
-      .grid-3,
-      .grid-4,
-      .boundary {
+
+      .grid {
         grid-template-columns: 1fr;
-      }
-      .three-lines div {
-        min-height: auto;
-      }
-      table {
-        font-size: 13px;
       }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <header class="hero">
+    <header>
       <div>
-        <p class="eyebrow">讲员版 · 给初中和高中孩子，尤其快上高中的孩子</p>
+        <p class="eyebrow">讲员备课页｜给初中和高中孩子</p>
         <h1>当父母不能一直提醒你，怎样在神里面站住</h1>
-        <p class="subtitle">这不是一堂“科学与信仰辩论课”，而是给孩子开始有更多自己选择时的一点根基：以后遇到怀疑、压力、自由、孤独和软弱时，知道可以真实站在神面前。</p>
-      </div>
-      <aside class="target-box">
-        <div>
-          <strong>一句话目标</strong>
-          <p>不是让他们当场懂完，而是让他们将来想起：我不用躲在“大家都这样”后面，我还有一条回到神面前的路。</p>
+        <p class="subtitle">新版按七个部分重构：用个人经历打开，用学习和偶像落地，用 AI 连接未来，最后回到圣经里的身份、盼望和求助路径。</p>
+        <div class="actions">
+          <a href="full-talk-script.html">打开完整讲稿</a>
+          <a href="slides.html">打开 HTML 幻灯片</a>
+          <a href="leaving-home-faith-talk-story-version.pptx">下载旧版 PPTX</a>
+          <a href="https://github.com/cuizihao1992/youth-faith-course-prep">GitHub 仓库</a>
         </div>
-        <div class="muted">基调：少说教，多引导；不猎奇，不施压；从圣经出发，给真实盼望。</div>
-        <a class="target-link" href="full-talk-script.html">打开故事版完整讲稿</a>
-        <a class="target-link" href="slides.html">打开 HTML 幻灯片</a>
-        <a class="target-link" href="leaving-home-faith-talk-story-version.pptx">下载故事版 PPT</a>
+      </div>
+      <aside class="quote">
+        <strong>撑不住的时候，不要躲开神。</strong>
+        <p>不是让孩子当场懂完，而是给他们将来遇到压力、怀疑、自由和失败时可以回来的路。</p>
       </aside>
     </header>
 
-    <div class="three-lines">
-      <div>神没有离开你。</div>
-      <div>不要躲在人群里。</div>
-      <div>问题可以带到神面前。</div>
-    </div>
+    <main>
+      <h2>最终讲课结构</h2>
+      <div class="grid">
+        <div class="card"><span>01</span><h3>开场</h3><p>不是讲漂亮话，而是讲一点我走过以后才明白的事。目标是拉近距离，不先压人。</p></div>
+        <div class="card"><span>02</span><h3>我的信仰经历</h3><p>从奶奶、初中对天堂的误解、高中压力、大学迷茫，到第一本圣经，看到神一步步带领。</p></div>
+        <div class="card"><span>03</span><h3>我的学习经历</h3><p>高数 78、拖延、游戏、问老师、复习三遍、英语遗憾。学习要忠心，但成绩不是神。</p></div>
+        <div class="card"><span>04</span><h3>偶像与敬拜</h3><p>人面对有限和不可控会寻找依靠。航天五院例子只说明：人不是机器，人天然会敬拜。</p></div>
+        <div class="card"><span>05</span><h3>走过的弯路</h3><p>比较、拖延、被“大家都这样”带走、有怀疑却假装没有。少说教，多分享代价。</p></div>
+        <div class="card"><span>06</span><h3>AI 时代</h3><p>AI 很厉害，要学会使用；中文房间提醒我们会回答不等于真正理解。使用工具，但不要把自己看成工具。</p></div>
+        <div class="card"><span>07</span><h3>总结</h3><p>给他们经文、祷告、诗歌和求助路径。最后落在：撑不住的时候，不要躲开神。</p></div>
+      </div>
+      <div class="note">讲员提醒：少说教，多讲真实经历；所有落点回到圣经；不制造恐惧，也不把孩子推向羞耻。</div>
+    </main>
 
-    <div class="layout">
-      <nav>
-        <h2>讲课导航</h2>
-        <a href="#map">1. 讲课地图</a>
-        <a href="#opening">2. 开场脚本</a>
-        <a href="#kierkegaard">3. 祁克果主线</a>
-        <a href="#anchors">4. 四个根基</a>
-        <a href="#worldview">5. 科学、AI 与理性</a>
-        <a href="#advice">6. 具体忠告</a>
-        <a href="#more-messages">7. 四个提醒</a>
-        <a href="#temptation">8. 试探边界</a>
-        <a href="#questions">9. 引导问题</a>
-        <a href="#closing">10. 结尾脚本</a>
-        <a href="#boundary">11. 讲员边界</a>
-      </nav>
-
-      <main>
-        <section id="map">
-          <div class="section-title"><span class="num">1</span><h2>讲课地图：让内容有起承转合</h2></div>
-          <div class="map">
-            <div class="map-row">
-              <div class="time">0-5 分钟</div>
-              <div class="stage">起：进入新阶段</div>
-              <div>先承认他们将要进入初中后段或高中阶段：新学校、新关系、新压力、更多自己的选择。父母不会每天盯着，但神不会离开。</div>
-              <div class="muted">约书亚记 1:9</div>
-            </div>
-            <div class="map-row">
-              <div class="time">5-12 分钟</div>
-              <div class="stage">承：亲自认识</div>
-              <div>如果有一天没有人提醒，他们还会不会自己来到神面前。父母可以带到神面前，但不能替他们相信。</div>
-              <div class="muted">约翰福音 4:42</div>
-            </div>
-            <div class="map-row">
-              <div class="time">12-25 分钟</div>
-              <div class="stage">转：不要躲在人群里</div>
-              <div>借祁克果提醒他们：不要用“大家都这样”逃避自己在神面前的责任。父母不能替你信，同学也不能替你负责。</div>
-              <div class="muted">罗马书 14:12；雅各书 1:22</div>
-            </div>
-            <div class="map-row">
-              <div class="time">25-40 分钟</div>
-              <div class="stage">转：分辨声音</div>
-              <div>课本、同学、短视频、AI 都会给答案。关键不是怕知识，而是分辨它在回答知识，还是在替你决定人生意义。</div>
-              <div class="muted">创世记 1:1；箴言 2:6</div>
-            </div>
-            <div class="map-row">
-              <div class="time">40-55 分钟</div>
-              <div class="stage">深：真实面对</div>
-              <div>怀疑不要假装，骄傲不要包装，软弱不要一个人扛。信仰不是自我修好，而是来到基督面前。</div>
-              <div class="muted">马可福音 9:24；雅各书 4:6</div>
-            </div>
-            <div class="map-row">
-              <div class="time">55-70 分钟</div>
-              <div class="stage">合：留下锚点</div>
-              <div>给一节经文、一句祷告、一首歌、一个可以说真话的人。最后不要塞满知识，只留下可抓住的路。</div>
-              <div class="muted">以赛亚书 41:10；加拉太书 6:2</div>
-            </div>
-          </div>
-        </section>
-
-        <section id="opening">
-          <div class="section-title"><span class="num">2</span><h2>开场脚本：先拉近距离</h2></div>
-          <div class="script-block">
-            <p>我先讲一件我后来挺后悔的事。我大一第一学期，高数考了 78。</p>
-            <p>78 不是灾难，但它提醒我：我刚进大学时很天真。我以为很多事像高考一样，只要最后关键时候冲一下就行。后来才知道，很多机会都看平时一点一点积累。</p>
-            <p>当时我没有弄清楚规则，也受身边风气影响。活动、游戏、各种新鲜东西都吸引人，好像进入新阶段就应该先放松。问题不是别人害我，主要还是我自己没想清楚，也懒惰了。</p>
-            <p><strong>这件事给我一个很深的教训：自由不是没人管我，而是我开始要对自己的选择负责。不要把最宝贵的时间，稀里糊涂交给身边的风气。</strong></p>
-          </div>
-          <div class="speaker-line"><strong>设计理由</strong>不要解释“我想真诚”，直接讲一个不光彩但学生能代入的经历。孩子先看见你这个人，再进入主题。</div>
-        </section>
-
-        <section id="kierkegaard">
-          <div class="section-title"><span class="num">3</span><h2>祁克果主线：不要躲在人群里</h2></div>
-          <div class="grid-3">
-            <div class="card green">
-              <h3>为什么适合讲</h3>
-              <p>他们马上要进入新的班级、学校和朋友圈。最危险的不一定是明目张胆的坏事，而是“大家都这样”。</p>
-              <div class="scripture"><strong>罗马书 14:12</strong>我们各人必要将自己的事在神面前说明。</div>
-            </div>
-            <div class="card blue">
-              <h3>怎么讲才不学术</h3>
-              <p>不要讲哲学系统，只讲一个问题：如果没有父母、老师、同学替我决定，我在神面前到底是谁？</p>
-              <div class="callout"><strong>一句话</strong>有些选择，最后不是“大家”替你站在神面前。</div>
-            </div>
-            <div class="card gold">
-              <h3>信仰不是旁观</h3>
-              <p>从小听道、知道答案还不够。信仰不是站在岸边评论游泳姿势，而是你自己要不要回应神。</p>
-              <div class="scripture"><strong>雅各书 1:22</strong>只是你们要行道，不要单单听道。</div>
-            </div>
-          </div>
-          <div class="speaker-line"><strong>讲法</strong>可以说：“我很喜欢祁克果，但今天不讲哲学课。你们只记住一个提醒：不要用‘大家都这样’替自己开脱。”</div>
-        </section>
-
-        <section id="anchors">
-          <div class="section-title"><span class="num">4</span><h2>四个根基：整堂课的核心</h2></div>
-          <div class="grid-4">
-            <div class="card green">
-              <span class="tag">根基</span>
-              <h3>神没有离开你</h3>
-              <p>父母不会一直提醒你，但你不会离开神的看顾。信心不是环境稳定，而是神同在。</p>
-              <div class="scripture"><strong>约书亚记 1:9</strong>你无论往哪里去，耶和华你的神必与你同在。</div>
-            </div>
-            <div class="card blue">
-              <span class="tag blue">归属</span>
-            <h3>如果有一天，没有人提醒你</h3>
-              <p>从小在教会是恩典，但恩典不是让人停在那里，而是呼召人亲自认识神。</p>
-              <div class="scripture"><strong>约翰福音 4:42</strong>现在我们信，不是因为你的话，是我们亲自听见了。</div>
-            </div>
-            <div class="card gold">
-              <span class="tag gold">真实</span>
-              <h3>把问题带到耶稣面前</h3>
-              <p>有问题时，不要急着装成没问题。像多马一样，把疑问带到主面前，而不是一个人躲开神。</p>
-              <div class="scripture"><strong>马可福音 9:24</strong>我信！但我信不足，求主帮助。</div>
-            </div>
-            <div class="card violet">
-              <span class="tag violet">身份</span>
-              <h3>成绩单不是你的身份证</h3>
-              <p>在你考好以前，神认识你；在你考差以后，神也没有把你丢掉。你是按神形象被造的人。</p>
-              <div class="scripture"><strong>创世记 1:26-27</strong>人按神的形象被造。</div>
-            </div>
-          </div>
-        </section>
-
-        <section id="worldview">
-          <div class="section-title"><span class="num">5</span><h2>科学、AI 与理性：怎么讲才不空</h2></div>
-          <div class="grid-3">
-            <div class="card green">
-              <h3>科学不是敌人</h3>
-              <p>科学研究神所造世界的规律。考试按课程要求回答，但课本不能替神决定人有没有灵魂、价值和目的。</p>
-              <div class="callout"><strong>可讲例子</strong>你知道手表齿轮怎么转，不等于手表没有设计者。知道自然界有规律，不等于没有创造主。</div>
-              <div class="muted">诗篇 19:1；罗马书 1:20</div>
-            </div>
-            <div class="card blue">
-              <h3>无神论不是中立</h3>
-              <p>无神论也是世界观。现实里，很多人在失控时仍会求保佑、算命、讨吉利，这说明人心不是没有敬拜，而是会寻找依靠。</p>
-              <div class="warning"><strong>注意</strong>不要用嘲笑的姿态讲别人的求平安行为。圣经让我们先看见人心深处对神、意义和永恒的渴望。</div>
-              <div class="muted">罗马书 1:25；传道书 3:11</div>
-            </div>
-            <div class="card gold">
-              <h3>AI 很强，但不是人</h3>
-              <p>AI 可以写代码、翻译、总结、识图、生成方案，但它不会真正悔改、敬拜、承担道德责任。</p>
-              <div class="callout"><strong>一句话</strong>人能造工具，但人自己不是工具；人是按神形象被造的。</div>
-              <div class="muted">创世记 1:26-27；箴言 2:6</div>
-            </div>
-          </div>
-
-          <div class="grid-2" style="margin-top:14px;">
-            <div class="card">
-              <h3>可以现场演示 AI</h3>
-              <p>把一段零散想法交给 AI，让它整理成提纲。然后告诉孩子：AI 很快，但不能直接照搬；人仍要判断是否真实、合圣经、适合现场。</p>
-              <div class="callout"><strong>例子</strong>这份讲稿也用了 AI 帮忙，但想法、边界、取舍和责任仍然在讲员身上。</div>
-              <div class="scripture"><strong>帖撒罗尼迦前书 5:21</strong>凡事察验，善美的要持守。</div>
-            </div>
-            <div class="card">
-              <h3>AI 时代的能力</h3>
-              <p>不要只问哪个专业不会被替代。更要培养数学逻辑、英语阅读、表达、计算机素养、领域深度、提问、判断、沟通和诚实。</p>
-              <div class="callout"><strong>一句话</strong>没有基础的人只能复制 AI 的答案；有基础的人能判断 AI 哪里对、哪里错、哪里能用。</div>
-              <div class="scripture"><strong>箴言 18:15</strong>智慧人的耳求知识。</div>
-            </div>
-          </div>
-
-          <div class="grid-2" style="margin-top:14px;">
-            <div class="card">
-              <h3>考试遇到冲突怎么回答</h3>
-              <p>考试问课本内容，可以按课程要求回答，比如“按课本解释是……”。这不是背叛信仰，因为你是在回答课程体系。</p>
-              <p>但若被问到个人是否相信神，不要撒谎否认主。可以温和、清楚地说：“我是基督徒，我相信神创造天地，也相信耶稣基督。”</p>
-              <div class="scripture"><strong>彼得前书 3:15</strong>以温柔、敬畏的心回答各人。</div>
-            </div>
-            <div class="card">
-              <h3>如果有人说“宗教是精神鸦片”</h3>
-              <p>可以先承认：有些宗教化做法和迷信，确实会被人当成麻醉，只求平安、发财、好运，却不面对罪和神。</p>
-              <p>但基督信仰不是麻醉人，而是叫人醒过来，面对罪、死亡、审判和神，并在基督里得拯救。</p>
-              <div class="scripture"><strong>马太福音 16:24</strong>若有人要跟从我，就当舍己，背起他的十字架来跟从我。</div>
-            </div>
-          </div>
-        </section>
-
-        <section id="advice">
-          <div class="section-title"><span class="num">6</span><h2>具体忠告：哪些是信仰，哪些是方法</h2></div>
-          <table>
-            <thead>
-              <tr>
-                <th>忠告</th>
-                <th>主要属于</th>
-                <th>对学习/生活的帮助</th>
-                <th>对信仰的帮助</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>不要让成绩成为你的神</td>
-                <td>信仰 + 学习方法</td>
-                <td>减少攀比和内耗，稳定努力</td>
-                <td>价值不建立在分数上</td>
-              </tr>
-              <tr>
-                <td>不要让自由成为你的偶像</td>
-                <td>信仰 + 生活方法</td>
-                <td>帮助管理作息、关系、时间</td>
-                <td>在自由里仍顺服神</td>
-              </tr>
-              <tr>
-                <td>长期熬夜不是小事</td>
-                <td>方法 + 信仰操练</td>
-                <td>保护专注、情绪、判断力</td>
-                <td>身体归主，时间归主，也学习安息</td>
-              </tr>
-              <tr>
-                <td>不要攀比</td>
-                <td>方法 + 心的问题</td>
-                <td>省下注意力，少内耗</td>
-                <td>不让人的评价定义自己</td>
-              </tr>
-              <tr>
-                <td>有怀疑不要假装</td>
-                <td>信仰 + 牧养方法</td>
-                <td>减少恐慌和自我压抑</td>
-                <td>真实来到神面前</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="grid-3" style="margin-top:14px;">
-            <div class="card green">
-              <h3>给高中生</h3>
-              <p>你要认真学习，这是责任。但高分不能告诉你“我比别人更有价值”，低分也不能告诉你“神不要我”。</p>
-              <div class="muted">马太福音 6:33；箴言 3:5-6</div>
-            </div>
-            <div class="card blue">
-              <h3>提前给将来的你</h3>
-              <p>大学对他们多数人还远，但可以先埋下一句话：自由不是把边界都拆掉，而是在基督里还能对自己说，这里该停，这里要交托。</p>
-              <div class="muted">罗马书 12:2；哥林多前书 10:23</div>
-            </div>
-            <div class="card gold">
-              <h3>关于熬夜</h3>
-              <p>偶尔赶作业不能简单定罪。但长期熬夜常常偷走第二天的清醒、学习、祷告和责任。</p>
-              <div class="scripture"><strong>诗篇 127:2</strong>惟有耶和华所亲爱的，必叫他安然睡觉。</div>
-            </div>
-          </div>
-        </section>
-
-        <section id="more-messages">
-          <div class="section-title"><span class="num">7</span><h2>再给他们四个提醒：不加压力，只给路</h2></div>
-          <div class="grid-4">
-            <div class="card green">
-              <h3>成绩单不是你的身份证</h3>
-              <p>以后你会被分数、排名、学校、专业、人的喜欢拉扯。但圣经先告诉你：你是按神形象被造的人。</p>
-              <div class="scripture"><strong>以弗所书 2:10</strong>我们原是他的工作，在基督耶稣里造成的。</div>
-            </div>
-            <div class="card blue">
-              <h3>不要一个人硬扛</h3>
-              <p>将来你真的软弱、失败、动摇时，不要突然消失。去找一个可以说真话的人。</p>
-              <div class="scripture"><strong>加拉太书 6:2</strong>你们各人的重担要互相担当。</div>
-            </div>
-            <div class="card gold">
-              <h3>每天一点点亲近神</h3>
-              <p>营会里很感动是好的，但真正托住人的，常常是后来每天一点点回到神面前。</p>
-              <div class="scripture"><strong>约翰福音 15:5</strong>离了我，你们就不能做什么。</div>
-            </div>
-            <div class="card violet">
-              <h3>不要把失败当成终局</h3>
-              <p>你以后可能会跌倒。但跌倒以后不要躲起来。浪子最重要的一步，是醒悟过来，起身回父亲那里。</p>
-              <div class="scripture"><strong>约翰一书 1:9</strong>我们若认自己的罪，神是信实的，是公义的。</div>
-            </div>
-          </div>
-          <div class="speaker-line"><strong>讲法</strong>这四个点不要像训话一样逐条压下去。可以说：“我再留给你们几句话，也许现在不觉得重要，但将来某一天你会需要。”</div>
-        </section>
-
-        <section id="temptation">
-          <div class="section-title"><span class="num">8</span><h2>试探与好奇：只讲原则，不制造入口</h2></div>
-          <div class="boundary">
-            <div class="card green">
-              <h3>可以讲</h3>
-              <p>当父母不能一直提醒你，你会遇到各样真实的试探。有些东西会抓住你的时间，有些会抓住你的心，有些会让你慢慢远离神。</p>
-              <p><strong>被诱惑不丢人。危险的是明明已经被拉住了，却假装没事，一个人越走越远。</strong></p>
-              <div class="scripture"><strong>哥林多前书 10:13</strong>神是信实的，必给你们开一条出路。</div>
-            </div>
-            <div class="card red">
-              <h3>不要讲</h3>
-              <ul class="compact-list">
-                <li>不列具体清单。</li>
-                <li>不讲猎奇故事。</li>
-                <li>不让孩子当众认罪。</li>
-                <li>不公开追问隐私。</li>
-                <li>不讲自己无法承接的内容。</li>
-              </ul>
-            </div>
-          </div>
-          <div class="speaker-line"><strong>好奇被激起时的三步</strong>停：不继续靠近。问：这会把我带向神，还是远离神？转：转向神、转向可信任的人、转向健康的事。</div>
-          <div class="warning"><strong>严重情况</strong>如果涉及自伤、被伤害、严重成瘾、长期抑郁焦虑或违法风险，不要让孩子自己扛，要立刻找父母、牧者或专业帮助。</div>
-        </section>
-
-        <section id="questions">
-          <div class="section-title"><span class="num">9</span><h2>引导问题：少说教，多让他们自己面对</h2></div>
-          <div class="grid-2">
-            <div class="card">
-              <h3>开场可问</h3>
-              <ul>
-                <li>如果父母不在身边提醒你，你最担心自己在哪方面站不住？</li>
-                <li>你觉得高中阶段最可能让人远离神的是什么？</li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3>信仰归属可问</h3>
-              <ul>
-                <li>我现在信神，更多是因为父母，还是我自己也在寻求祂？</li>
-                <li>如果父母不提醒我，我还会不会来到神面前？</li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3>人群压力可问</h3>
-              <ul>
-                <li>我有没有用“大家都这样”替自己的选择找理由？</li>
-                <li>如果只有我一个人站在神面前，我还会这样选吗？</li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3>怀疑可问</h3>
-              <ul>
-                <li>我有没有因为怕“不属灵”，就假装自己没有问题？</li>
-                <li>如果我是多马，我会不会把疑问带到耶稣面前？</li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3>现实选择可问</h3>
-              <ul>
-                <li>我是不是正在用成绩、自由、关系或人的认可定义自己？</li>
-                <li>我有没有一个可以说真话的成熟基督徒？</li>
-              </ul>
-            </div>
-          </div>
-          <div class="callout"><strong>讲员提醒</strong>耶稣也常用问题引导人面对自己的心。问题不是为了逼他们回答，而是给圣灵工作的空间。</div>
-        </section>
-
-        <section id="closing">
-          <div class="section-title"><span class="num">10</span><h2>结尾脚本：留下能抓住的锚点</h2></div>
-          <div class="script-block">
-            <p>今天你不需要记住很多内容。只记住三句话。</p>
-            <p><strong>第一，父母不会一直提醒你，但神没有离开你。</strong></p>
-            <p><strong>第二，不要躲在人群里，要真实站在神面前。</strong></p>
-            <p><strong>第三，有问题不要假装，把问题带到神面前。</strong></p>
-            <p>我不是要告诉你们以后不会害怕、不会失败、不会怀疑。我想告诉你们：当你害怕的时候，神仍与你同在；当你失败的时候，你仍可以回到神面前；当你怀疑的时候，主没有怕你的问题。</p>
-            <p>盼望不是我不会软弱，而是我软弱时仍有一位主可以回去。</p>
-          </div>
-          <div class="grid-4" style="margin-top:14px;">
-            <div class="card green">
-              <h3>一节经文</h3>
-              <p>约书亚记 1:9 或以赛亚书 41:10。</p>
-            </div>
-            <div class="card blue">
-              <h3>一句祷告</h3>
-              <p>主啊，我现在不明白，也有点害怕，但我愿意来到你面前，求你帮助我。</p>
-            </div>
-            <div class="card gold">
-              <h3>一首歌</h3>
-              <p>《你不要害怕》。先安静听一遍，再视情况一起唱。</p>
-            </div>
-            <div class="card violet">
-              <h3>一个人</h3>
-              <p>父母、牧者、教会长辈、成熟基督徒朋友。</p>
-            </div>
-          </div>
-          <div class="hope"><strong>约翰福音 16:33</strong>在世上你们有苦难；但你们可以放心，我已经胜了世界。</div>
-        </section>
-
-        <section id="boundary">
-          <div class="section-title"><span class="num">11</span><h2>讲员边界：保护孩子，也保护你自己</h2></div>
-          <div class="boundary">
-            <div class="card green">
-              <h3>要做</h3>
-              <ul>
-                <li>用见证和问题打开，不用命令压人。</li>
-                <li>每个观点都回到圣经，不只是人生经验。</li>
-                <li>承认孩子会软弱，但给他们回到神面前的路。</li>
-                <li>把不适合公开处理的问题导向私下帮助。</li>
-              </ul>
-            </div>
-            <div class="card red">
-              <h3>不要做</h3>
-              <ul>
-                <li>不要讲成知识竞赛。</li>
-                <li>不要制造猎奇和羞耻感。</li>
-                <li>不要逼孩子当众表态或认罪。</li>
-                <li>不要讲你自己现在也承接不了的具体内容。</li>
-              </ul>
-            </div>
-          </div>
-          <div class="speaker-line"><strong>最后提醒</strong>不要把真理讲成压力，要把真理讲成可以回家的路。</div>
-        </section>
-      </main>
-    </div>
-
-    <footer>
-      <strong>备课定位</strong>
-      这页是讲员现场使用稿，不是完整逐字稿。讲的时候要留白，让孩子有时间把问题带到神面前。
-    </footer>
+    <footer>当前版本优先维护 HTML 讲稿与 HTML 幻灯片；PPTX 可等内容稳定后再重新导出。</footer>
   </div>
 </body>
 </html>

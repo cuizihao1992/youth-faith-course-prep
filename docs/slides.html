@@ -103,7 +103,7 @@
     h1,
     h2 {
       margin: 0;
-      max-width: 980px;
+      max-width: 1050px;
       line-height: 1.12;
       letter-spacing: 0;
     }
@@ -115,14 +115,6 @@
       align-self: center;
       display: grid;
       gap: 22px;
-    }
-
-    .lead {
-      max-width: 980px;
-      margin: 0;
-      font-size: 30px;
-      font-weight: 900;
-      line-height: 1.34;
     }
 
     .quote {
@@ -145,21 +137,16 @@
       font-weight: 800;
     }
 
-    .note {
-      margin: 0;
-      color: var(--muted);
-      font-size: 20px;
-      font-weight: 700;
-    }
-
     .grid-2,
-    .grid-3 {
+    .grid-3,
+    .grid-4 {
       display: grid;
       gap: 18px;
     }
 
     .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
     .card {
       padding: 22px 24px;
@@ -243,7 +230,6 @@
     }
 
     .dark .kicker,
-    .dark .note,
     .dark .footer {
       color: #c9d7ce;
     }
@@ -253,10 +239,8 @@
       color: var(--ink);
     }
 
-    .dark .verse {
-      color: #f7f4e9;
-      background: rgba(255, 255, 255, .12);
-      border-left-color: #e0bd68;
+    .dark .page-no {
+      color: #fff;
     }
 
     @media (max-width: 900px) {
@@ -269,14 +253,21 @@
       }
       h1 { font-size: 36px; }
       h2 { font-size: 31px; }
-      .lead, ul { font-size: 22px; }
+      ul { font-size: 22px; }
       .quote { font-size: 25px; }
-      .grid-2, .grid-3 { grid-template-columns: 1fr; }
-      .timeline div { grid-template-columns: 1fr; }
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+      .timeline div {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media print {
-      html, body { background: #fff; }
+      html,
+      body { background: #fff; }
       .toolbar { display: none; }
       .deck { width: 100%; padding: 0; }
       .slide {
@@ -301,70 +292,51 @@
 
   <main class="deck">
     <section class="slide dark" id="s01">
-      <div>
-        <p class="kicker">营会分享｜给初中和高中孩子</p>
-        <h1>当父母不能一直提醒你，怎样在神里面站住</h1>
-      </div>
-      <div class="content">
-        <p class="quote">撑不住的时候，不要躲开神。</p>
-        <p class="note">个人故事、祁克果的提醒，最后都落回圣经和基督。</p>
-      </div>
+      <div><p class="kicker">营会分享｜给初中和高中孩子</p><h1>当父母不能一直提醒你，怎样在神里面站住</h1></div>
+      <div class="content"><p class="quote">撑不住的时候，不要躲开神。</p></div>
       <div class="footer"><span>主题句</span><span class="page-no">01</span></div>
     </section>
 
     <section class="slide" id="s02">
-      <div>
-        <p class="kicker">开场</p>
-        <h2>先讲一件不太光彩的事</h2>
-      </div>
+      <div><p class="kicker">今天怎么讲</p><h2>不是讲漂亮话，是讲我走过的路</h2></div>
       <div class="content">
-        <p class="lead">大一第一学期，高数 78。</p>
-        <div class="grid-2">
-          <div class="card"><strong>不是灾难</strong><p>离挂科还远，但也没什么可骄傲。</p></div>
-          <div class="card blue"><strong>真正的问题</strong><p>我以为大学像高考，最后冲一下就行。</p></div>
-        </div>
-        <p class="verse">自由不是没人管我，而是我开始要为自己的选择负责。</p>
+        <ul>
+          <li>我的信仰经历：神怎样一步步带领我。</li>
+          <li>我的学习经历：方法、时间和成绩的边界。</li>
+          <li>偶像与敬拜：人天然会寻找依靠。</li>
+          <li>AI 时代：学习使用工具，但不要把自己看成工具。</li>
+        </ul>
       </div>
-      <div class="footer"><span>以弗所书 5:15-16</span><span class="page-no">02</span></div>
+      <div class="footer"><span>先拉近距离，再进入主题</span><span class="page-no">02</span></div>
     </section>
 
     <section class="slide" id="s03">
-      <div>
-        <p class="kicker">时间</p>
-        <h2>不要把最宝贵的时间交给风气</h2>
-      </div>
-      <div class="content">
-        <ul>
-          <li>“刚开始先放松，以后再努力。”</li>
-          <li>“大家都这样。”</li>
-          <li>“现在先放松，以后再努力。”</li>
-        </ul>
-        <p class="lead">这些话听起来轻松，代价可能是你自己付。</p>
-      </div>
-      <div class="footer"><span>不是不能玩，是要知道什么更重要</span><span class="page-no">03</span></div>
-    </section>
-
-    <section class="slide" id="s04">
-      <div>
-        <p class="kicker">我的路</p>
-        <h2>我不是一下子信主的</h2>
-      </div>
+      <div><p class="kicker">我的信仰经历</p><h2>我不是一下子信主的</h2></div>
       <div class="content">
         <div class="timeline">
           <div><span>小时候</span>奶奶带我去教会，我不太信，也不太排斥。</div>
           <div><span>初中后</span>学了物理地理，觉得“天上没有天堂”，更不信了。</div>
-          <div><span>大二左右</span>迷茫、灰暗，开始问人生能不能改变。</div>
-          <div><span>大学后来</span>火车上遇到基督徒学长，收到第一本圣经。</div>
+          <div><span>高中</span>知道要考好大学，也在压力里暗暗求帮助。</div>
+          <div><span>大学</span>迷茫、灰暗，开始问：人真的能改变吗？</div>
         </div>
       </div>
-      <div class="footer"><span>回头看，是神一步一步带领</span><span class="page-no">04</span></div>
+      <div class="footer"><span>回头看，是神一步一步带领</span><span class="page-no">03</span></div>
+    </section>
+
+    <section class="slide" id="s04">
+      <div><p class="kicker">奶奶</p><h2>有一种影响，不是靠讲大道理</h2></div>
+      <div class="content">
+        <div class="grid-2">
+          <div class="card"><strong>奶奶不识字</strong><p>讲不出很深的神学，也没有一本我小时候能翻开的圣经。</p></div>
+          <div class="card blue"><strong>但她信得单纯</strong><p>坚持信了一辈子，每天为我祷告，也默默关心家人。</p></div>
+        </div>
+        <p class="verse">不要轻看一个人为你祷告。</p>
+      </div>
+      <div class="footer"><span>信仰先在生命里留下影子</span><span class="page-no">04</span></div>
     </section>
 
     <section class="slide" id="s05">
-      <div>
-        <p class="kicker">误解</p>
-        <h2>我曾经把“天上”想得太小</h2>
-      </div>
+      <div><p class="kicker">误解</p><h2>我曾经把“天上”想得太小</h2></div>
       <div class="content">
         <div class="grid-2">
           <div class="card"><strong>当时的想法</strong><p>人坐飞机到天上，看到的是云、星星、太空，没看到天堂。</p></div>
@@ -372,45 +344,24 @@
         </div>
         <p class="verse">“天和天上的天尚且不足你居住。”——列王纪上 8:27</p>
       </div>
-      <div class="footer"><span>疑问不一定可怕，关键是愿不愿意继续寻找</span><span class="page-no">05</span></div>
+      <div class="footer"><span>疑问不一定可怕，关键是继续寻找</span><span class="page-no">05</span></div>
     </section>
 
     <section class="slide" id="s06">
-      <div>
-        <p class="kicker">灰暗</p>
-        <h2>我最深的问题不是找工作</h2>
-      </div>
+      <div><p class="kicker">大学的灰暗</p><h2>我最深的问题不是找工作</h2></div>
       <div class="content">
         <ul>
           <li>能不能找到好工作？能赚多少钱？</li>
           <li>人真的能幸福吗？婚姻和家庭有盼望吗？</li>
           <li>我会不会变成自己讨厌的人？</li>
         </ul>
-        <p class="lead">最深的问题：人真的能改变吗？</p>
+        <p class="quote">最深的问题：人真的能改变吗？</p>
       </div>
-      <div class="footer"><span>罗马书 7:19</span><span class="page-no">06</span></div>
+      <div class="footer"><span>罗马书 7:19；以西结书 36:26</span><span class="page-no">06</span></div>
     </section>
 
     <section class="slide" id="s07">
-      <div>
-        <p class="kicker">寺庙</p>
-        <h2>那时我想躲起来，把自己修好</h2>
-      </div>
-      <div class="content">
-        <div class="grid-2">
-          <div class="card"><strong>不是找到真理</strong><p>我其实不了解佛教，更像是想找个安静地方逃开。</p></div>
-          <div class="card gold"><strong>寺庙的想象</strong><p>清净、安静、与世隔绝，好像不用面对复杂关系。</p></div>
-        </div>
-        <p class="quote">福音不是人努力修好自己，而是神在基督里拯救不能自救的人。</p>
-      </div>
-      <div class="footer"><span>以弗所书 2:8-9</span><span class="page-no">07</span></div>
-    </section>
-
-    <section class="slide" id="s08">
-      <div>
-        <p class="kicker">第一本圣经</p>
-        <h2>火车上的一次聊天</h2>
-      </div>
+      <div><p class="kicker">第一本圣经</p><h2>火车上的一次聊天</h2></div>
       <div class="content">
         <ul>
           <li>我在火车上看《宗教学导论》。</li>
@@ -419,267 +370,191 @@
           <li>他当场送了我人生第一本圣经。</li>
         </ul>
       </div>
-      <div class="footer"><span>当时像偶然，回头看是一环扣一环</span><span class="page-no">08</span></div>
+      <div class="footer"><span>当时像偶然，回头看是一环扣一环</span><span class="page-no">07</span></div>
+    </section>
+
+    <section class="slide" id="s08">
+      <div><p class="kicker">被神带领</p><h2>不是我很会选择，是神一步步带我</h2></div>
+      <div class="content">
+        <ul>
+          <li>奶奶的祷告。</li>
+          <li>初中的疑问。</li>
+          <li>大学的迷茫。</li>
+          <li>哲学和宗教学的辅修。</li>
+          <li>火车上的学长和第一本圣经。</li>
+          <li>后来遇见基督徒朋友和牧者。</li>
+        </ul>
+        <p class="verse">“不是你们拣选了我，是我拣选了你们。”——约翰福音 15:16</p>
+      </div>
+      <div class="footer"><span>不要轻看今天</span><span class="page-no">08</span></div>
     </section>
 
     <section class="slide" id="s09">
-      <div>
-        <p class="kicker">被吸引</p>
-        <h2>我不是先把所有问题想通了</h2>
-      </div>
+      <div><p class="kicker">学习经历</p><h2>高数 78 给我的提醒</h2></div>
       <div class="content">
-        <div class="grid-3">
-          <div class="card"><strong>圣经</strong><p>原来有历史、书信，也有很有智慧的话。</p></div>
-          <div class="card blue"><strong>人</strong><p>基督徒的生命、友善、喜乐吸引我。</p></div>
-          <div class="card gold"><strong>敬拜</strong><p>“一宿虽然有哭泣，早晨我们必欢呼。”</p></div>
+        <div class="grid-2">
+          <div class="card"><strong>不是灾难</strong><p>离挂科还远，但也没什么可骄傲。</p></div>
+          <div class="card blue"><strong>真正的问题</strong><p>我太天真，没有弄清楚规则，也没有管理好时间。</p></div>
         </div>
-        <p class="lead">信主更像一个决定：我愿意试着相信这位神是真的。</p>
+        <p class="quote">自由不是没人管我，而是我开始要为自己的选择负责。</p>
       </div>
-      <div class="footer"><span>后来才知道：不是我先找到神，是神先找我</span><span class="page-no">09</span></div>
+      <div class="footer"><span>以弗所书 5:15-16</span><span class="page-no">09</span></div>
     </section>
 
     <section class="slide" id="s10">
-      <div>
-        <p class="kicker">没有提醒</p>
-        <h2>没有人提醒你的那一天</h2>
-      </div>
+      <div><p class="kicker">学习方法</p><h2>几个不高级但有用的笨办法</h2></div>
       <div class="content">
-        <p class="lead">你会开始自己面对选择、压力、孤独、问题。</p>
-        <div class="grid-2">
-          <div class="card"><strong>外面没人催</strong><p>但心里仍然需要一位主。</p></div>
-          <div class="card blue"><strong>真正的根基</strong><p>不是父母在旁边，而是神与你同在。</p></div>
-        </div>
-        <p class="verse">“你当刚强壮胆……因为你无论往哪里去，耶和华你的神必与你同在。”——约书亚记 1:9</p>
+        <ul>
+          <li>不懂的问题尽量不过夜。</li>
+          <li>复习尽量过三遍：跟上、补细节、串起来。</li>
+          <li>英语很重要，AI 翻译不能替代你的基础。</li>
+          <li>学习是忠心的一部分，但成绩不能成为神。</li>
+        </ul>
       </div>
-      <div class="footer"><span>不是不害怕，而是害怕时有神同在</span><span class="page-no">10</span></div>
+      <div class="footer"><span>歌罗西书 3:23</span><span class="page-no">10</span></div>
     </section>
 
     <section class="slide" id="s11">
-      <div>
-        <p class="kicker">祁克果</p>
-        <h2>不要躲在人群里</h2>
-      </div>
+      <div><p class="kicker">敬拜</p><h2>人天然会寻找依靠</h2></div>
       <div class="content">
-        <p class="lead">我很喜欢祁克果，因为他一直提醒人：不要用“大家都这样”逃避自己在神面前的责任。</p>
         <div class="grid-2">
-          <div class="card"><strong>人群的声音</strong><p>同学都这样。别人不都这样过吗？别人也没那么认真。</p></div>
-          <div class="card blue"><strong>圣经的声音</strong><p>我们各人必要将自己的事在神面前说明。</p></div>
+          <div class="card"><strong>宗教学的观察</strong><p>人面对江河、星空、死亡、灾难，会从有限想到无限。</p></div>
+          <div class="card gold"><strong>现实中的例子</strong><p>考试求好运，生意求顺利，遇到不可控就想找保佑。</p></div>
         </div>
-        <p class="quote">有些选择，最后不是“大家”替你站在神面前。</p>
+        <p class="quote">问题不是人有没有敬拜，而是人敬拜谁。</p>
       </div>
-      <div class="footer"><span>罗马书 14:12</span><span class="page-no">11</span></div>
+      <div class="footer"><span>传道书 3:11</span><span class="page-no">11</span></div>
     </section>
 
     <section class="slide" id="s12">
-      <div>
-        <p class="kicker">真实回应</p>
-        <h2>信仰不是旁观，而是回应</h2>
-      </div>
+      <div><p class="kicker">航天五院</p><h2>高科技里，人也会寻找平安</h2></div>
       <div class="content">
-        <div class="grid-2">
-          <div class="card"><strong>旁观式信仰</strong><p>我知道父母信，我知道标准答案，我也能评论基督教。</p></div>
-          <div class="card gold"><strong>真实的信仰</strong><p>我自己要不要来到神面前？我自己要不要回应祂？</p></div>
-        </div>
-        <p class="lead">信仰不是站在岸边评论游泳姿势，而是你自己要不要下水。</p>
-        <p class="verse">“只是你们要行道，不要单单听道，自己欺哄自己。”——雅各书 1:22</p>
+        <ul>
+          <li>研究生出差，处理高分二号遥感卫星数据。</li>
+          <li>场景非常技术化：帧头、解析、校验。</li>
+          <li>却在标识里看到“南无阿弥陀佛”。</li>
+          <li>不是为了嘲笑，而是提醒：人面对不可控，会寻找保佑。</li>
+        </ul>
+        <p class="verse">人不是机器，再高级的技术也不能让人变成神。</p>
       </div>
-      <div class="footer"><span>不是知识表演，是在神面前真实</span><span class="page-no">12</span></div>
+      <div class="footer"><span>罗马书 1:25</span><span class="page-no">12</span></div>
     </section>
 
     <section class="slide" id="s13">
-      <div>
-        <p class="kicker">世界观</p>
-        <h2>世界会给你很多答案</h2>
-      </div>
-      <div class="content">
-        <div class="grid-3">
-          <div class="card"><strong>学校</strong><p>考试、知识、规则。</p></div>
-          <div class="card blue"><strong>同学和网络</strong><p>流行、比较、价值感。</p></div>
-          <div class="card gold"><strong>AI</strong><p>快速、完整、很像有道理。</p></div>
-        </div>
-        <p class="lead">这些不是都不能听，但不能让它们替你定义人生。</p>
-      </div>
-      <div class="footer"><span>箴言 2:6</span><span class="page-no">13</span></div>
-    </section>
-
-    <section class="slide" id="s14">
-      <div>
-        <p class="kicker">AI</p>
-        <h2>AI 很强，但不是你的主人</h2>
-      </div>
-      <div class="content">
-        <ul>
-          <li>它可以帮你查资料、整理思路、练习表达。</li>
-          <li>它可以写“我爱你”，但它真的爱你吗？</li>
-          <li>它可以写悔改祷告，但它真的悔改吗？</li>
-          <li>它可以解释敬拜，但它真的敬拜神吗？</li>
-        </ul>
-      </div>
-      <div class="footer"><span>工具可以用，良心和信仰不能交出去</span><span class="page-no">14</span></div>
-    </section>
-
-    <section class="slide" id="s15">
-      <div>
-        <p class="kicker">AI 与人</p>
-        <h2>AI 提醒我们重新惊叹人的奇妙</h2>
-      </div>
-      <div class="content">
-        <div class="grid-2">
-          <div class="card"><strong>造一个 AI</strong><p>需要数据、数学、芯片、能源、工程、顶尖人才。</p></div>
-          <div class="card blue"><strong>真正的人</strong><p>会爱、会羞愧、会盼望，会问“我为什么活着”。</p></div>
-        </div>
-        <p class="verse">“房屋都必有人建造，但建造万物的就是神。”——希伯来书 3:4</p>
-      </div>
-      <div class="footer"><span>不要把人看成高级机器</span><span class="page-no">15</span></div>
-    </section>
-
-    <section class="slide" id="s16">
-      <div>
-        <p class="kicker">有限</p>
-        <h2>人会在不可控面前寻找依靠</h2>
-      </div>
-      <div class="content">
-        <p class="lead">宗教学有一种观察：人从自己的有限，想到无限。</p>
-        <div class="grid-2">
-          <div class="card"><strong>江河、星空、死亡、灾难</strong><p>人意识到：我不是最终掌控者。</p></div>
-          <div class="card gold"><strong>航天五院的例子</strong><p>很技术的场景里，人仍然会寻找保佑、平安和确定感。</p></div>
-        </div>
-        <p class="verse">真正的问题不是“人有没有敬拜”，而是“我把惧怕和平安交给谁”。</p>
-      </div>
-      <div class="footer"><span>传道书 3:11；罗马书 1:25</span><span class="page-no">16</span></div>
-    </section>
-
-    <section class="slide" id="s17">
-      <div>
-        <p class="kicker">偶像</p>
-        <h2>好东西也可能变成假主人</h2>
-      </div>
+      <div><p class="kicker">偶像</p><h2>好东西也可能变成假主人</h2></div>
       <div class="content">
         <div class="grid-3">
           <div class="card"><strong>成绩</strong><p>很重要，但不能定义你值多少钱。</p></div>
           <div class="card blue"><strong>自由</strong><p>没人管，不等于心里没有主。</p></div>
           <div class="card red"><strong>游戏/娱乐</strong><p>如果已经不享受却停不下来，就不只是娱乐。</p></div>
         </div>
-        <p class="verse">“凡事我都可行，但无论哪一件，我总不受它的辖制。”——哥林多前书 6:12</p>
       </div>
-      <div class="footer"><span>偶像不一定丑，常常很有吸引力</span><span class="page-no">17</span></div>
+      <div class="footer"><span>哥林多前书 6:12</span><span class="page-no">13</span></div>
     </section>
 
-    <section class="slide" id="s18">
-      <div>
-        <p class="kicker">比较</p>
-        <h2>排行榜会换皮肤，但不会自动消失</h2>
-      </div>
+    <section class="slide" id="s14">
+      <div><p class="kicker">祁克果</p><h2>不要躲在人群里</h2></div>
       <div class="content">
-        <ul>
-          <li>高中比年级排名。</li>
-          <li>大学比学校、专业、保研、实习。</li>
-          <li>工作后比城市、收入、平台、朋友圈。</li>
-        </ul>
-        <p class="quote">你考好以前，神认识你；你考差以后，神也没有把你丢掉。</p>
+        <div class="grid-2">
+          <div class="card"><strong>人群的声音</strong><p>大家都这样。别人不都这样过吗？</p></div>
+          <div class="card blue"><strong>圣经的声音</strong><p>我们各人必要将自己的事在神面前说明。</p></div>
+        </div>
+        <p class="quote">有些选择，最后不是“大家”替你站在神面前。</p>
       </div>
-      <div class="footer"><span>创世记 1:27</span><span class="page-no">18</span></div>
+      <div class="footer"><span>罗马书 14:12</span><span class="page-no">14</span></div>
     </section>
 
-    <section class="slide" id="s19">
-      <div>
-        <p class="kicker">怀疑</p>
-        <h2>有怀疑，不要装</h2>
-      </div>
+    <section class="slide" id="s15">
+      <div><p class="kicker">怀疑</p><h2>有怀疑，不要装</h2></div>
       <div class="content">
         <div class="grid-2">
           <div class="card"><strong>那个父亲</strong><p>“我信！但我信不足，求主帮助。”</p></div>
           <div class="card blue"><strong>多马</strong><p>不要害怕像多马，但也不要拿怀疑当借口远离神。</p></div>
         </div>
-        <p class="lead">把问题带到祷告里，带到圣经里，也带到成熟基督徒面前。</p>
       </div>
-      <div class="footer"><span>马可福音 9:24；约翰福音 20</span><span class="page-no">19</span></div>
+      <div class="footer"><span>马可福音 9:24；约翰福音 20</span><span class="page-no">15</span></div>
+    </section>
+
+    <section class="slide" id="s16">
+      <div><p class="kicker">AI 时代</p><h2>AI 很强，但不是你的主人</h2></div>
+      <div class="content">
+        <ul>
+          <li>我工作、写代码、整理讲稿都会用 AI。</li>
+          <li>AI 可以写代码、翻译、总结、做 PPT、解释题目。</li>
+          <li>但不是 AI 替我信主、祷告、悔改、负责。</li>
+          <li>工具可以用，良心和信仰不能交出去。</li>
+        </ul>
+      </div>
+      <div class="footer"><span>先承认它厉害，再讲它的边界</span><span class="page-no">16</span></div>
+    </section>
+
+    <section class="slide" id="s17">
+      <div><p class="kicker">中文房间</p><h2>会回答，不一定等于真正理解</h2></div>
+      <div class="content">
+        <div class="grid-2">
+          <div class="card"><strong>思想实验</strong><p>一个不懂中文的人，按规则书回复中文，外面看起来像懂中文。</p></div>
+          <div class="card gold"><strong>提醒我们</strong><p>会处理符号，不等于像人一样理解、爱、悔改、敬拜。</p></div>
+        </div>
+        <p class="quote">AI 可以写祷告词，但不会真的向神祷告。</p>
+      </div>
+      <div class="footer"><span>约翰·塞尔的中文房间思想实验</span><span class="page-no">17</span></div>
+    </section>
+
+    <section class="slide" id="s18">
+      <div><p class="kicker">怎么学习</p><h2>AI 时代的学习方式会改变</h2></div>
+      <div class="content">
+        <ul>
+          <li>会提问，比只会等答案重要。</li>
+          <li>会判断真假，比复制粘贴重要。</li>
+          <li>会追问为什么，把知识整理成自己的话。</li>
+          <li>让 AI 帮你学会，不要让 AI 替你学完。</li>
+        </ul>
+        <p class="verse">“凡事都可行，但不都有益处。”——哥林多前书 10:23</p>
+      </div>
+      <div class="footer"><span>工具帮助成长，不帮助逃避</span><span class="page-no">18</span></div>
+    </section>
+
+    <section class="slide" id="s19">
+      <div><p class="kicker">人的价值</p><h2>不要把自己看成工具</h2></div>
+      <div class="content">
+        <div class="grid-2">
+          <div class="card"><strong>世界会问</strong><p>你有什么用？成绩怎么样？会不会被 AI 替代？</p></div>
+          <div class="card blue"><strong>圣经先说</strong><p>你是神按祂形象造的人。</p></div>
+        </div>
+        <p class="quote">你不是成绩单，不是简历，不是产出单位。</p>
+      </div>
+      <div class="footer"><span>创世记 1:27</span><span class="page-no">19</span></div>
     </section>
 
     <section class="slide" id="s20">
-      <div>
-        <p class="kicker">试探</p>
-        <h2>被试探不丢人，藏起来才危险</h2>
-      </div>
+      <div><p class="kicker">带走</p><h2>给你们能抓住的四样东西</h2></div>
       <div class="content">
-        <div class="grid-3">
-          <div class="card"><strong>停</strong><p>不要继续靠近入口。</p></div>
-          <div class="card blue"><strong>问</strong><p>这会把我带向神，还是远离神？</p></div>
-          <div class="card gold"><strong>转</strong><p>转向神、可信任的人、健康的事情。</p></div>
-        </div>
-        <p class="verse">神是信实的，总要给你们开一条出路。——哥林多前书 10:13</p>
-      </div>
-      <div class="footer"><span>不讲猎奇细节，不要求当众认罪</span><span class="page-no">20</span></div>
-    </section>
-
-    <section class="slide" id="s21">
-      <div>
-        <p class="kicker">高中</p>
-        <h2>给要上高中的你</h2>
-      </div>
-      <div class="content">
-        <ul>
-          <li>认真学习，这是你现在真实的责任。</li>
-          <li>不懂的问题尽量不过夜。</li>
-          <li>不要让成绩成为你的神。</li>
-          <li>你需要努力，也需要知道自己不是靠成绩被神爱。</li>
-        </ul>
-      </div>
-      <div class="footer"><span>学习是责任，不是身份</span><span class="page-no">21</span></div>
-    </section>
-
-    <section class="slide" id="s22">
-      <div>
-        <p class="kicker">将来</p>
-        <h2>提前留给将来的你</h2>
-      </div>
-      <div class="content">
-        <ul>
-          <li>大学离你们多数人还远，先放在心里。</li>
-          <li>将来不要把自由理解成彻底放飞。</li>
-          <li>英语、阅读、专业基础，会在以后帮你很多。</li>
-          <li>现在就练习找一个能说真话、能一起祷告的人。</li>
-        </ul>
-      </div>
-      <div class="footer"><span>自由需要根基，也需要边界</span><span class="page-no">22</span></div>
-    </section>
-
-    <section class="slide" id="s23">
-      <div>
-        <p class="kicker">带走</p>
-        <h2>给你们能抓住的四样东西</h2>
-      </div>
-      <div class="content">
-        <div class="grid-2">
+        <div class="grid-4">
           <div class="card"><strong>一节经文</strong><p>约书亚记 1:9</p></div>
           <div class="card blue"><strong>一句祷告</strong><p>主啊，我不明白，也害怕，求你帮助我。</p></div>
           <div class="card gold"><strong>一首诗歌</strong><p>《你不要害怕》</p></div>
           <div class="card red"><strong>一个人</strong><p>父母、牧者、长辈、成熟基督徒朋友。</p></div>
         </div>
       </div>
-      <div class="footer"><span>不要等到完全撑不住才说</span><span class="page-no">23</span></div>
+      <div class="footer"><span>不要等到完全撑不住才说</span><span class="page-no">20</span></div>
     </section>
 
-    <section class="slide dark" id="s24">
-      <div>
-        <p class="kicker">结尾</p>
-        <h2>最后只收成三句话</h2>
-      </div>
+    <section class="slide dark" id="s21">
+      <div><p class="kicker">结尾</p><h2>最后只收成三句话</h2></div>
       <div class="content">
         <ul>
           <li>父母不会一直提醒你，但神没有离开你。</li>
+          <li>你会听见很多声音，但不要把心交给偶像。</li>
           <li>有问题不要假装，把问题带到神面前。</li>
-          <li>神可能已经在你生命里放下很多线索，不要轻看今天。</li>
         </ul>
-        <p class="quote">在世上你们有苦难；但你们可以放心，我已经胜了世界。</p>
+        <p class="quote">撑不住的时候，不要躲开神。</p>
       </div>
-      <div class="footer"><span>约翰福音 16:33</span><span class="page-no">24</span></div>
+      <div class="footer"><span>约翰福音 16:33</span><span class="page-no">21</span></div>
     </section>
   </main>
 
   <script>
     const slides = Array.from(document.querySelectorAll('.slide'));
-    let current = 0;
 
     function nearestSlideIndex() {
       const mid = window.scrollY + window.innerHeight / 2;
@@ -697,7 +572,7 @@
     }
 
     function go(delta) {
-      current = Math.max(0, Math.min(slides.length - 1, nearestSlideIndex() + delta));
+      const current = Math.max(0, Math.min(slides.length - 1, nearestSlideIndex() + delta));
       slides[current].scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
