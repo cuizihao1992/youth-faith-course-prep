@@ -232,7 +232,7 @@ def main():
     <header>
       <p class="eyebrow">完整讲稿｜正式版</p>
       <h1>{inline(title)}</h1>
-      <p class="subtitle">根据 53_revised_real_experience_talk_script.md 生成。以真实经历为主线，讲信仰、学习、迷茫、AI 时代和神一步步的带领。</p>
+      <p class="subtitle">以真实经历为主线，讲信仰、学习、迷茫、AI 时代和神一步步的带领。目标不是讲满知识，而是给孩子留下一条回到神面前的路。</p>
       <div class="top-actions">
         <a href="./">返回首页</a>
         <a href="real-experience-faith-talk.html">打开 HTML 幻灯片</a>
